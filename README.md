@@ -1,5 +1,5 @@
 # favorites
-favorites is a Tiddlywiki 5 plugin let you create a list of favorites tiddler. It was originally developed by Andrew Harrison at http://favorites.tiddlyspot.com/
+The favorites plugin is a small Tiddlywiki 5 plugin let you create a list of favorite tiddlers. It was originally developed by Andrew Harrison at http://favorites.tiddlyspot.com/
 
 # Demo
 The demo can be find here: https://kookma.github.io/favorites/
@@ -12,4 +12,7 @@ Alternatively open the https://kookma.github.io/favorites/ and drag and drop the
 
 # Issues
 Your feedbacks and issues are appreciated through this page
+
+# Tiddliwiki
+A self contained personal wiki can be found at https://tiddlywiki.com/
 
