@@ -1,0 +1,41 @@
+button-color: red
+button-outline-color: red
+caption: Favorites
+created: 20181010142320082
+creator: Mohammad
+modified: 20191217172910965
+modifier: Mohammad
+tab-icon-outline-color: #000
+tab-icon-selected-color: #ff0
+tab-icon-unselected-color: #999
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/favorites/stylesheet
+type: text/vnd.tiddlywiki
+
+.tc-tab-buttons + .tc-favorites-hidden {
+    display: none;
+}
+.tc-tab-buttons button.tc-tab-selected {
+    fill: {{!!tab-icon-selected-color}};
+    stroke: {{!!tab-icon-outline-color}}; 
+}
+.tc-tab-buttons button:not(.tc-tab-selected) {
+    fill: {{!!tab-icon-unselected-color}};
+}
+.tc-favorites {
+    stroke: {{!!button-outline-color}};
+    stroke-width:5;
+    fill: {{!!button-color}};
+}
+.tc-image-star-filled {
+    height:1em;
+    width:1em;
+}
+
+.kk-favorites svg{
+    fill:#aaaaaa;
+}
+
+.kk-favorites button:hover svg {
+    fill: #000000; 
+}

@@ -1,0 +1,39 @@
+caption: Favorites
+created: 20181008195317473
+creator: Mohammad
+list-before: $:/core/ui/SideBar/Recent
+modified: 20191217180523557
+modifier: Mohammad
+tags: $:/tags/SideBar
+title: $:/plugins/kookma/favorites/sidebar
+type: text/vnd.tiddlywiki
+
+\define drop-actions()
+<$action-listops $tiddler='$:/plugins/kookma/favorites/list' $subfilter='+[insertbefore:currentTiddler<actionTiddler>]'/>
+\end
+
+\define remove() -[[$(currentTiddler)$]]
+
+<$list filter='[list[$:/plugins/kookma/favorites/list]has[title]]'>
+<div style='position: relative;'>
+<$droppable actions=<<drop-actions>>>
+<div class='tc-droppable-placeholder'>
+&nbsp;
+</div>
+<div>
+<$link to={{!!title}} tooltip=<<currentTiddler>> >
+<$view field='caption'><$view field='title'/></$view></$link>
+</div>
+</$droppable>
+</div>
+</$list>
+<!-- if favorites are not existed like deleted tiddlers -->
+<div class="kk-favorites"> 
+<$list filter='[list[$:/plugins/kookma/favorites/list]!has[title]]'>
+<$link to={{!!title}}><$view field='title'/></$link>
+&nbsp;
+<$button class="tc-btn-invisible tc-tiddlylink" tooltip="remove non-existent tiddler"> {{$:/plugins/kookma/favorites/times.svg}}
+<$action-listops $tiddler='$:/plugins/kookma/favorites/list' $field='list' $subfilter=<<remove>>/>
+</$button><br>
+</$list>
+</div>
