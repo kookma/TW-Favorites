@@ -1,7 +1,21 @@
-created: 20191216195758019
-modified: 20191216195802658
-tags: 
-title: $:/plugins/kookma/Favorites/readme
+created: 20181101141032553
+creator: Mohammad
+modified: 20191217192647413
+modifier: Mohammad
+title: $:/plugins/kookma/favorites/readme
 type: text/vnd.tiddlywiki
 
-Tell your users about your plugin: what is it good for? How can it be used? And so on...
+<style> .dsvg svg{width: 1.2em;height: 1.2em;vertical-align: middle;}</style>
+
+!! How to use
+The Favorites plugin adds the <span class=dsvg>{{$:/plugins/kookma/favorites/image}}</span> button to the tiddler view Toolbar and also the `Favorites` tab to the sidebar.
+
+The button becomes `red` when selected and then the tiddler appears in the list on the `Favorites` tab.  The list can be sorted using drag and drop of items.
+
+A tiddler can be removed from the `Favorites` tab by either
+
+* opening it and clicking again on the <span class=dsvg>{{$:/plugins/kookma/favorites/image}}</span> button. or
+* click on remove button in `Favorites` list on the sidebar
+
+!! Credits
+All credits go to [[Andrew Harrison|http://favorites.tiddlyspot.com/]] who originally developed the favorites plugin
