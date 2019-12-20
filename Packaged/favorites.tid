@@ -1,9 +1,9 @@
 author: Mohammad Rahmani and Andrew Harrison
-core-version: >= 5.1.17
+core-version: >= 5.1.21
 created: 20191216195836755
 description: Favorites
 list: readme license history
-modified: 20191220132606775
+modified: 20191220134639597
 plugin-type: plugin
 source: https://github.com/kookma/TW-Favorites
 tags: 
