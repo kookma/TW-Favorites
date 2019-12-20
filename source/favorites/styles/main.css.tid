@@ -3,13 +3,13 @@ button-outline-color: red
 caption: Favorites
 created: 20181010142320082
 creator: Mohammad
-modified: 20191217204243061
+modified: 20191219201617775
 modifier: Mohammad
 tab-icon-outline-color: #000
 tab-icon-selected-color: #ff0
 tab-icon-unselected-color: #999
 tags: $:/tags/Stylesheet
-title: $:/plugins/kookma/favorites/stylesheet
+title: $:/plugins/kookma/favorites/styles/main.css
 type: text/vnd.tiddlywiki
 
 .tc-tab-buttons + .tc-favorites-hidden {
@@ -30,10 +30,4 @@ type: text/vnd.tiddlywiki
 .tc-image-star-filled {
     height:1em;
     width:1em;
-}
-.kk-favorites svg{
-    fill:#aaaaaa;
-}
-.kk-favorites button:hover svg {
-    fill: #000000; 
 }

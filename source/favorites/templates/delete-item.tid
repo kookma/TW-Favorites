@@ -1,0 +1,11 @@
+created: 20191220075034126
+modified: 20191220075623545
+tags: show-contents
+title: $:/plugins/kookma/favorites/templates/delete-item
+type: text/vnd.tiddlywiki
+
+<$button class="tc-btn-invisible kk-btn-mini" tooltip="remove non-existent tiddler">
+{{$:/core/images/close-button}}
+<$action-listops $tiddler=<<favlistTid>> $field="list" $subfilter=<<remove>>/>
+<$action-listops $tiddler=<<folder>> $field="list" $subfilter=<<remove>>/>
+</$button>&nbsp;

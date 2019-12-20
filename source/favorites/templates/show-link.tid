@@ -1,0 +1,11 @@
+created: 20191220074823880
+modified: 20191220075606564
+tags: show-contents
+title: $:/plugins/kookma/favorites/templates/show-link
+type: text/vnd.tiddlywiki
+
+<$link to={{!!title}} tooltip=<<currentTiddler>> >
+<$view field="caption">
+ <$view field="title"/>
+</$view>
+</$link><br>

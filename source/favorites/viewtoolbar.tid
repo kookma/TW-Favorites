@@ -3,22 +3,23 @@ created: 20181010141620348
 creator: Mohammad
 description: {{$:/language/Buttons/Favorites/Hint}}
 list-after: $:/core/ui/Buttons/more-tiddler-actions
-modified: 20191217160913813
+modified: 20191220091747321
 modifier: Mohammad
 tags: $:/tags/ViewToolbar
-title: $:/plugins/kookma/favorites/template
+title: $:/plugins/kookma/favorites/viewtoolbar
 type: text/vnd.tiddlywiki
 
+\define favlistTid() $:/favorites/folder-main
 \define add() [[$(currentTiddler)$]]
 \define remove() -[[$(currentTiddler)$]]
 \define my-svg()
 <svg class='tc-image-favorites tc-image-button' width='22pt' height='22pt' viewBox='0 0 129 129'><g><path fill='$(fill)$' stroke='$(stroke)$' stroke-width='5' d='m$(m)$$(path)$'/></g></svg>
 \end
 
-<$list filter='[list[$:/plugins/kookma/favorites/list]is[current]]'><$button tooltip={{$:/language/Buttons/Favorites/Hint}} aria-label={{$:/language/Buttons/Favorites/Caption}} class=<<tv-config-toolbar-class>>>
-<$action-listops $tiddler='$:/plugins/kookma/favorites/list' $field='list' $subfilter=<<remove>>/>
+<$list filter='[list<favlistTid>is[current]]'><$button tooltip={{$:/language/Buttons/Favorites/Hint}} aria-label={{$:/language/Buttons/Favorites/Caption}} class=<<tv-config-toolbar-class>>>
+<$action-listops $tiddler=<<favlistTid>> $field='list' $subfilter=<<remove>>/>
 <$list filter='[<tv-config-toolbar-icons>prefix[yes]]'>
-<$vars fill={{$:/plugins/kookma/favorites/stylesheet!!button-color}} stroke={{$:/plugins/kookma/favorites/stylesheet!!button-outline-color}} m='121.6,40.1' path={{$:/plugins/kookma/favorites/image!!path}}>
+<$vars fill={{$:/plugins/kookma/favorites/styles/main.css!!button-color}} stroke={{$:/plugins/kookma/favorites/styles/main.css!!button-outline-color}} m='121.6,40.1' path={{$:/plugins/kookma/favorites/image!!path}}>
 <<my-svg>>
 </$vars>
 </$list>
@@ -27,8 +28,8 @@ type: text/vnd.tiddlywiki
 <$text text={{$:/language/Buttons/Favorites/Caption}}/>
 </span>
 </$list>
-</$button></$list><$list filter='[all[current]!list[$:/plugins/kookma/favorites/list]]'><$button tooltip={{$:/language/Buttons/Choose/Hint}} aria-label={{$:/language/Buttons/Choose/Caption}} class=<<tv-config-toolbar-class>>>
-<$action-listops $tiddler='$:/plugins/kookma/favorites/list' $field='list' $subfilter=<<add>>/>
+</$button></$list><$list filter='[all[current]!list<favlistTid>]'><$button tooltip={{$:/language/Buttons/Choose/Hint}} aria-label={{$:/language/Buttons/Choose/Caption}} class=<<tv-config-toolbar-class>>>
+<$action-listops $tiddler=<<favlistTid>> $field='list' $subfilter=<<add>>/>
 <$list filter='[<tv-config-toolbar-icons>prefix[yes]]'>
 {{$:/plugins/kookma/favorites/image}}
 </$list>

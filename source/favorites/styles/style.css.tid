@@ -1,0 +1,19 @@
+created: 20191219075310949
+modified: 20191219204105054
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/favorites/styles/style.css
+type: text/css
+
+.sd-input textarea:focus, .sd-input input:focus { outline: none;}
+.sd-input textarea, .sd-input input { border:none; border-bottom: 1px dotted gray; margin-left:0px; width:75%;}
+
+.kk-custom-drop-down .tc-drop-down{min-width:60px;}
+
+.kk-favorites svg{
+    fill:#aaaaaa;
+}
+.kk-favorites button:hover svg {
+    fill: #000000; 
+}
+
+.kk-btn-mini svg { font-size: 0.7em; fill: #bbb; }
