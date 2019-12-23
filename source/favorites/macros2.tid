@@ -1,6 +1,6 @@
 created: 20191218202308638
-modified: 20191219075325259
-tags: 
+modified: 20191222180415061
+tags: show-contents
 title: $:/plugins/kookma/favorites/macros2
 type: text/vnd.tiddlywiki
 
@@ -8,8 +8,3 @@ type: text/vnd.tiddlywiki
 \define doSearch()
 <span class="sd-input"><$edit-text tiddler=<<tidinput>>   tag="input" default="" placeholder="tiddlers" /></span>
 \end
-
-
-
-
-<pre><$view/></pre>

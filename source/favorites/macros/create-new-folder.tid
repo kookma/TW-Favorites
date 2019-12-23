@@ -1,0 +1,17 @@
+created: 20191222170722237
+modified: 20191223081727818
+tags: $:/tags/Macro
+title: $:/plugins/kookma/favorites/macros/create-new-folder
+type: text/vnd.tiddlywiki
+
+\define new-fav-folder(folder-name:"")
+<$button tooltip="create new folder" class="tc-btn-invisible">{{$:/core/images/new-button}} Create new folder
+<$set name=datesuffix value=<<now "[UTC]YYYY0MM0DD0hh0mm0ssXXX">> >
+<$action-createtiddler 
+  $basetitle={{{[<folderpath>addsuffix[-]addsuffix<datesuffix>]}}} 
+	caption=<<__folder-name__>>/>
+</$set>
+<!-- clear edit-text temp tiddler-->
+<$action-setfield $tiddler=<<tempFolderTid>> text=""/>
+</$button>
+\end

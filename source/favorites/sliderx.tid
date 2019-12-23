@@ -1,13 +1,12 @@
 created: 20191220123602267
-modified: 20191220124119423
-tags: $:/tags/Macro
+modified: 20191222152736606
+tags: show-contents
 title: $:/plugins/kookma/favorites/sliderx
 type: text/vnd.tiddlywiki
 
 \define sliderx(title, content)
-<$set name="revealState" value=<<qualify "$:/state-reveal-$title$">>>
-<b>
-  <$reveal type="nomatch" state=<<revealState>> text="yes">
+<$set name="revealState" filter={{{ [[$:/temp/favorits/]addsuffix<__title__>addsuffix<qualify>] }}}>
+<$reveal type="nomatch" state=<<revealState>> text="yes">
     <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="yes">
       {{$:/core/images/right-arrow}}
     </$button>
@@ -17,14 +16,8 @@ type: text/vnd.tiddlywiki
       {{$:/core/images/down-arrow}}
     </$button>
   </$reveal>
-  <$view tiddler="$title$" field="caption">
-    <$view tiddler="$title$" field="title"></$view>
-  </$view>
-  
-</b>
-
+  <b><$macrocall $name=folding-editor tiddler=<<__title__>> /></b>
 <$reveal type="match" state=<<revealState>> text="yes">
-
 $content$
 </$reveal>
 </$set>

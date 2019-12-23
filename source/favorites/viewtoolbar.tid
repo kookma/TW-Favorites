@@ -3,14 +3,14 @@ created: 20181010141620348
 creator: Mohammad
 description: {{$:/language/Buttons/Favorites/Hint}}
 list-after: $:/core/ui/Buttons/more-tiddler-actions
-modified: 20191220091747321
+modified: 20191223070628874
 modifier: Mohammad
-tags: $:/tags/ViewToolbar
+tags: $:/tags/ViewToolbar show-contents
 title: $:/plugins/kookma/favorites/viewtoolbar
 type: text/vnd.tiddlywiki
 
-\define favlistTid() $:/favorites/folder-main
-\define add() [[$(currentTiddler)$]]
+\define favlistTid() $:/favorites/favlist
+\define add() [[$(currentTiddler)$]]+[putfirst[]]
 \define remove() -[[$(currentTiddler)$]]
 \define my-svg()
 <svg class='tc-image-favorites tc-image-button' width='22pt' height='22pt' viewBox='0 0 129 129'><g><path fill='$(fill)$' stroke='$(stroke)$' stroke-width='5' d='m$(m)$$(path)$'/></g></svg>

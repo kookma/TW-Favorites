@@ -1,0 +1,11 @@
+created: 20191222183601789
+modified: 20191222183754121
+tags: $:/tags/Macro
+title: $:/plugins/kookma/favorites/macros/open-options
+type: text/vnd.tiddlywiki
+
+\define show-options()
+<$button class="tc-btn-invisible" to="$:/plugins/kookma/favorites/manager">
+{{$:/core/images/options-button}} Manager
+</$button>
+\end

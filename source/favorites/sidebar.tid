@@ -1,24 +1,35 @@
 caption: Favorites
-created: 20181008195317473
+created: 20191222152207752
 creator: Mohammad
 list-before: $:/core/ui/SideBar/Recent
-modified: 20191220131503063
+modified: 20191223070843747
 modifier: Mohammad
 tags: $:/tags/SideBar
 title: $:/plugins/kookma/favorites/sidebar
 type: text/vnd.tiddlywiki
 
+\whitespace trim
+\import $:/plugins/kookma/favorites/sliderx
+\import $:/plugins/kookma/favorites/macros/create-new-folder
+
 \define folderpath() $:/favorites/folder
-\define favlistTid() $:/favorites/folder-main
-\define allfolders() [prefix<folderpath>]
-\define folders() [prefix<folderpath>]-[<favlistTid>]
+\define favlistTid() $:/favorites/favlist
+\define folders() [prefix<folderpath>]
 \define remove() -[[$(currentTiddler)$]]
 
 \define drop-actions()
+<!-- case 1: tiddler is already in favlist and moved between folders by drag and drop -->
+<$reveal type=match default=<<favlistTid>> text={{{[<actionTiddler>listed[]match<favlistTid>]}}} >
 <$vars oldFolder={{{ [<actionTiddler>listed[]]+[subfilter<folders>]-[<folder>]+[limit[1]] }}}>
 <$action-listops $tiddler=<<oldFolder>> $field="list" $subfilter="-[<actionTiddler>]" />
-<$action-listops $tiddler=<<folder>> $subfilter="+[insertbefore:currentTiddler<actionTiddler>]"/>
 </$vars>
+</$reveal>
+<!-- case 2: tiddler is NOT already in favlist and dropped from outside favorites -->
+<$reveal type=nomatch default=<<favlistTid>> text={{{[<actionTiddler>listed[]match<favlistTid>]}}} >
+<$action-listops $tiddler=<<favlistTid>> $field='list' $subfilter="[<actionTiddler>]"/>
+</$reveal>
+<!-- move it to the target folder -->
+<$action-listops $tiddler=<<folder>> $subfilter="+[insertbefore:currentTiddler<actionTiddler>]"/>
 \end
 
 \define placeholder()
@@ -36,7 +47,16 @@ type: text/vnd.tiddlywiki
 </$droppable>
 \end
 
-\define empty-folder()
+\define droppable-itemxx()
+\whitespace trim
+<!--add extra space for drag and drop after last item-->
+<$droppable actions=<<drop-actions>>>
+<<placeholder>><div style="margin-top:-6px;margin-bottom:-6px;">&nbsp;</div>
+</$droppable>
+\end
+
+
+\define display-folder-is-empty()
 <div style="padding-left:20px;">
 <$droppable actions=<<drop-actions>>>
 <<placeholder>>
@@ -45,60 +65,55 @@ type: text/vnd.tiddlywiki
 </div>
 \end
 
-\define droppable-area(folder)
+\define display-fav-folder(folder)
 <$vars folder=<<__folder__>> >
 <!--check if folder is empty-->
-<$list filter="[list<folder>has[title]limit[1]]" emptyMessage=<<empty-folder>> variable=ignore>
+<$list filter="[list<folder>limit[1]]" emptyMessage=<<display-folder-is-empty>> variable=ignore>
 <div style="padding-left:20px;">
-<$list filter="[<folder>match<favlistTid>]"><!-- for main folder (or all favorites) -->
-<$list filter="[list<folder>has[title]]">
+<$list filter="[list<folder>]"><!--display all tiddlers in folder list field one by one -->
+<$list filter="[<favlistTid>contains<currentTiddler>]" variable=ignore><!--check if the tiddler is a favorite list-->
+<$macrocall $name=droppable-item />
+</$list>
+</$list>
+<<droppable-itemxx>>
+</div>
+</$list>
+</$vars>
+\end
+
+\define display-fav-notcategorized()
+<$vars folder=<<favlistTid>> >
+<b><$macrocall $name=folding-editor tiddler=<<folder>> /></b>
+<!--check if favlistTid is empty -->
+<$list filter="[list<folder>limit[1]]" emptyMessage=<<display-folder-is-empty>> variable=ignore>
+<div style="padding-left:20px;">
+<$list filter="[list<folder>]">
 <$list filter="[<currentTiddler>listed[]]+[subfilter<folders>count[]match[0]]" variable=ignore>
 <$macrocall $name=droppable-item />
 </$list>
 </$list>
-</$list>
-<$list filter="[<folder>!match<favlistTid>]"><!-- for other folders -->
-<$list filter="[list<folder>has[title]]">
-<$list filter="[<favlistTid>contains<currentTiddler>]" variable=ignore>
-<$macrocall $name=droppable-item />
-</$list>
-</$list>
-</$list>
+<<droppable-itemxx>>
 </div>
 </$list>
 </$vars>
 \end
 
-\define missing-items()
-<div style="padding-left:20px;">
-<$list filter="[list<favlistTid>!has[title]]">
-<$vars folder=<<favlistTid>> >
-<$transclude tiddler="$:/plugins/kookma/favorites/templates/delete-item" field=text/> 
-</$vars>
-<$transclude tiddler="$:/plugins/kookma/favorites/templates/show-link" field=text/>
-</$list>
-</div>
-\end
 
-<!-- show folders -->
+
+<!-- create the sidebar tab -->
 <div class="kk-favorites">
-<$list filter=<<allfolders>> >
-<div>
-<$macrocall $name=sliderx
-   title=<<currentTiddler>> 
-	 content="""<$macrocall $name=droppable-area folder=<<currentTiddler>> />""" />
-</div>	 
-</$list>
-</div>
+<<new-fav-folder>> &nbsp; <<show-options>>
+<hr>
 
+<!--show uncategorized favorites -->
+<<display-fav-notcategorized>>
 
-<!-- if favorites are not existed like deleted tiddlers -->
-<$list filter="[list<favlistTid>!has[title]limit[1]]" variable=ignore>
-<div class="kk-favorites">
-<div>
+<!-- show all favorite folders -->
+<$list filter=<<folders>> variable=favfolder >
+<div><!--create a div for each folder-->
 <$macrocall $name=sliderx
-   title="Missing items" 
-	 content=<<missing-items>> />
-</div>	 
+   title=<<favfolder>> 
+	 content="""<$macrocall $name="display-fav-folder" folder=<<favfolder>> />""" />
 </div>
 </$list>
+</div>

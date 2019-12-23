@@ -1,5 +1,6 @@
 created: 20191218200806381
-modified: 20191219075825645
+modified: 20191222180623317
+tags: show-contents
 title: $:/plugins/kookma/favorites/macros
 type: text/vnd.tiddlywiki
 
@@ -31,5 +32,3 @@ Delete ?
 <$macrocall $name="exportButton" exportFilter="$(filter)$" lingoBase="$:/language/Buttons/ExportTiddlers/"/>
 </span>
 \end
-
-<pre><$view/></pre>
