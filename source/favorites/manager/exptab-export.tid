@@ -1,0 +1,12 @@
+created: 20191226172145394
+modified: 20191227174257445
+tags: show-contents
+title: $:/plugins/kookma/favorites/manager/exptab-export
+type: text/vnd.tiddlywiki
+
+\define export-favorites()
+<$reveal type=nomatch default="0" text={{{[list<selection>count[]]}}} ><!--display button if there is a result-->
+<$macrocall $name="exportButton"   exportFilter="[list[$(selection)$]]" lingoBase="$:/language/Buttons/ExportTiddlers/" baseFilename="favorites"/>
+</$reveal>
+\end
+<<export-favorites>>

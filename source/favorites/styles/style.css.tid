@@ -1,5 +1,5 @@
 created: 20191219075310949
-modified: 20191219204105054
+modified: 20191227210901990
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/favorites/styles/style.css
 type: text/css
@@ -17,3 +17,15 @@ type: text/css
 }
 
 .kk-btn-mini svg { font-size: 0.7em; fill: #bbb; }
+
+/* in folding-editor*/
+.fv-folding-button button svg{
+	 font-size:0.8em;
+	 vertical-align: middle;
+}
+
+.fv-folding-button input[type="radio"] {
+  width: 0.8em; !important;
+  height: 0.8em; !important;
+  vertical-align: middle !important;
+}

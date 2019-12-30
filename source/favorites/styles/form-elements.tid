@@ -1,0 +1,8 @@
+created: 20191224192646018
+modified: 20191227202836595
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/favorites/styles/form-elements
+type: text/css
+
+.fv-form label  { display:inline-block; width:130px; margin-left:5px; }
+.fv-form input, .fv-form select { display:inline-block; width:320px;}

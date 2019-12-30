@@ -2,9 +2,7 @@ button-color: red
 button-outline-color: red
 caption: Favorites
 created: 20181010142320082
-creator: Mohammad
-modified: 20191219201617775
-modifier: Mohammad
+modified: 20191223211116367
 tab-icon-outline-color: #000
 tab-icon-selected-color: #ff0
 tab-icon-unselected-color: #999

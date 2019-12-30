@@ -1,10 +1,20 @@
 created: 20191216195857105
-modified: 20191223092939595
+modified: 20191230080304574
 tags: 
 title: $:/plugins/kookma/favorites/history
 type: text/vnd.tiddlywiki
 
-!! Release 4.0.1
+!! Release 4.0.4
+* Dec 29th, 2019
+* [NEW] favorite manager
+* [NEW] favorites manager has got new tabs
+* [NEW] rename and delete folders using manager tab
+* [NEW] export tab for exporting favorites in various format
+* [NEW] delete tiddlers from wiki based on folder selection
+* [NEW] combo search to search in favorite list
+* [NEW] improved documentation
+
+!! Release 4.0.2
 * Dec 23th, 2019
 * [NEW] favorite folder
 * [NEW] rename folder using inline editbox

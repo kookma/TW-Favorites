@@ -1,49 +1,7 @@
-created: 20191222174813401
-modified: 20191223081941678
+created: 20191224190957179
+modified: 20191227202445641
 tags: 
 title: $:/plugins/kookma/favorites/manager
 type: text/vnd.tiddlywiki
 
-\import $:/plugins/kookma/favorites/macros/create-new-folder
-
-\define folderpath() $:/favorites/folder
-\define favlistTid() $:/favorites/favlist
-\define folders() [prefix<folderpath>]
-
-
-\define remove-all-favs()
-<$button> Remove all favorites
-<$list filter="[<favlistTid>] [subfilter<folders>]">
-<$action-setfield 
-  $tiddler=<<currentTiddler>> 
-	$field="list" $value=""/>
-</$list>
-</$button>
-\end
-
-\define remove-all-folders()
-<$button> Remove all folders
-<$action-deletetiddler $filter=<<folders>> />
-</$button>
-\end
-
-<<alert danger "Experimental - ''~DoNot'' use for any real project!">>
-
-!! Export
-
-!! Delete
-<<<
-favorite operation<br>
-
-<<remove-all-favs>>
-<<<
-
-!! Folder
-<<<
-<<remove-all-folders>>
-<$vars tempFolderTid="$:/temp/favorites/new-folder">
-<$edit-text tag=input tiddler=<<tempFolderTid>> default="" placeholder="enter a name"/>
-<$macrocall $name=new-fav-folder folder-name={{{[<tempFolderTid>get[text]]}}} />
-</$vars>
-<<<
-
+<<tabs tabsList:"[tag[$:/favorites/Manager]!has[draft.of]!sort[caption]]" default:"$:/plugins/kookma/favorites/manager/search">>
