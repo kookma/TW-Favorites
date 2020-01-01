@@ -1,8 +1,12 @@
 created: 20191216195857105
-modified: 20191230100739977
+modified: 20200101091742900
 tags: 
 title: $:/plugins/kookma/favorites/history
 type: text/vnd.tiddlywiki
+
+!! Release 4.0.6
+* Jan 1st, 2020
+* [NEW] icon color on viewtoolbar can be set from Settings tab
 
 !! Release 4.0.5
 * Dec 30th, 2019
