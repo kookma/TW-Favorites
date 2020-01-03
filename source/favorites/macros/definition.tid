@@ -1,5 +1,5 @@
 created: 20191223204533023
-modified: 20191230065024293
+modified: 20200103090656507
 tags: show-contents
 title: $:/plugins/kookma/favorites/macros/definition
 type: text/vnd.tiddlywiki
@@ -8,7 +8,7 @@ type: text/vnd.tiddlywiki
 \define favlistTid()     $:/favorites/favlist
 \define foldertagTid()   $:/tags/Favorites/Folder
 \define folders()        [tag[$(foldertagTid)$]]
-\define recentlyAdded()  $:/favorites/recent
+\define recentlyAdded()  $:/plugins/kookma/favorites/recent
 
 \define temppath()       $:/temp/favorites
 
