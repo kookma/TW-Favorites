@@ -1,5 +1,10 @@
 # Favorites
 The Favorites plugin is a small Tiddlywiki 5 plugin let you create a list of favorite tiddlers. It was originally developed by Andrew Harrison at http://favorites.tiddlyspot.com/
+Favorites plugin 4+ contain three modes:
+
+- **flat mode**: one favorite list, no folder
+- **structured mode**: use folder, search tool, export and delete tool
+- **frozen list**: read only, simple table of content style
 
 # Demo
 The demo can be find here: https://kookma.github.io/TW-Favorites/
@@ -8,8 +13,8 @@ The demo can be find here: https://kookma.github.io/TW-Favorites/
 
 # Install
 ## Packaged plugin
-   - Download favorites.tid from Packaged folder above
-   - Drag and drop avorites.tid into your wiki
+   - Download **favorites.tid** from Packaged folder above
+   - Drag and drop **avorites.tid** into your wiki
    - Save and reload your wiki
 
 ## Client-Server installation (separate files)
@@ -24,7 +29,7 @@ _It is highly recommended to backup your data before trying any new plugin! Do i
 
 
 # Issues
-Your feedbacks and issues are appreciated through this page
+Your feedback and issue report are appreciated.
 
 # Tiddliwiki
 A self contained personal wiki can be found at https://tiddlywiki.com/

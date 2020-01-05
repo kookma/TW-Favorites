@@ -1,5 +1,5 @@
 created: 20181101141032553
-modified: 20200103091231406
+modified: 20200105042522378
 title: $:/plugins/kookma/favorites/readme
 type: text/vnd.tiddlywiki
 
@@ -15,10 +15,14 @@ A tiddler can be removed from the `Favorites` tab by either
 * opening it and clicking again on the <span class=dsvg>{{$:/plugins/kookma/favorites/image}}</span> button. or
 * click on remove button in `Favorites` list on the sidebar
 
-!! Update
+The ''Favorites plugin'' contains three modes
 
-!! Move favorites list to other wiki
-The [[$:/favorites/favlist]] stores all favorites in its `list` field. So if you drag and drop this tiddler from one tiddler to another, the favorites list of target tiddler will be overwritten and the favorites list will be update
+* ''flat mode'': one favorite list, no folder
+* ''structured mode'': use folder, search tool, export and delete tool
+* ''frozen list'': read only, simple table of content style
 
-!! Credits
-*  [[Andrew Harrison|http://favorites.tiddlyspot.com/]] who originally developed the favorites plugin
+Favorites plugin also supports folder operation, export and bulk operations.
+
+!! Tutorial
+* For detailed description and demo see: [[https://kookma.github.io/TW-Favorites/]]
+* For latest update and code see: [[https://github.com/kookma/TW-Favorites]]
