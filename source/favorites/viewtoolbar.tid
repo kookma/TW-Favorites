@@ -2,7 +2,7 @@ caption: {{$:/language/Buttons/Favorites/Caption}}
 created: 20181010141620348
 description: {{$:/language/Buttons/Favorites/Hint}}
 list-after: $:/core/ui/Buttons/more-tiddler-actions
-modified: 20191230052910348
+modified: 20200101120609329
 tags: $:/tags/ViewToolbar
 title: $:/plugins/kookma/favorites/viewtoolbar
 type: text/vnd.tiddlywiki
@@ -22,7 +22,7 @@ type: text/vnd.tiddlywiki
 <$action-listops $tiddler={{{[subfilter<folders>contains<currentTiddler>limit[1]]}}} $field='list' $subfilter=<<remove>>/>
 
 <$list filter='[<tv-config-toolbar-icons>prefix[yes]]'>
-<$vars fill={{$:/plugins/kookma/favorites/styles/main.css!!button-color}} stroke={{$:/plugins/kookma/favorites/styles/main.css!!button-outline-color}} m='121.6,40.1' path={{$:/plugins/kookma/favorites/image!!path}}>
+<$vars fill={{$:/plugins/kookma/favorites/styles/main.css!!button-color}} stroke={{$:/plugins/kookma/favorites/styles/main.css!!button-color}} m='121.6,40.1' path={{$:/plugins/kookma/favorites/image!!path}}>
 <<my-svg>>
 </$vars>
 </$list>
