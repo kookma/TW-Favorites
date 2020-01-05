@@ -2,7 +2,7 @@ caption: {{$:/language/Buttons/Favorites/Caption}}
 created: 20181010141620348
 description: {{$:/language/Buttons/Favorites/Hint}}
 list-after: $:/core/ui/Buttons/more-tiddler-actions
-modified: 20191230052910348
+modified: 20200105044028986
 tags: $:/tags/ViewToolbar
 title: $:/plugins/kookma/favorites/viewtoolbar
 type: text/vnd.tiddlywiki
