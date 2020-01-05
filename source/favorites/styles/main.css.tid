@@ -1,8 +1,8 @@
-button-color: red
+button-color: #ff0000
 button-outline-color: red
 caption: Favorites
 created: 20181010142320082
-modified: 20191223211116367
+modified: 20200105051206104
 tab-icon-outline-color: #000
 tab-icon-selected-color: #ff0
 tab-icon-unselected-color: #999

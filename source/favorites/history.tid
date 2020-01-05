@@ -1,5 +1,5 @@
 created: 20191216195857105
-modified: 20200105045229907
+modified: 20200105051147840
 tags: 
 title: $:/plugins/kookma/favorites/history
 type: text/vnd.tiddlywiki
@@ -11,6 +11,7 @@ type: text/vnd.tiddlywiki
 
 !! Release 4.0.6
 * Jan 1st, 2020
+* [NEW] Set the color of heart icon on viewtoolbar using the Settings tab
 * [FIXED] issue with recent items has been addressed. No recent is distribued as a plugin tiddler
 
 !! Release 4.0.5
