@@ -1,0 +1,62 @@
+created: 20191216195857105
+modified: 20200105041002329
+tags: 
+title: $:/plugins/kookma/favorites/history
+type: text/vnd.tiddlywiki
+
+!! Release 4.1.0
+* Jan 5th, 2020
+* [FIXED] readme
+* [FIXED] minor issues in code has been fixed. Code has been polished further
+
+!! Release 4.0.6
+* Jan 1st, 2020
+* [FIXED] issue with recent items has been addressed. No recent is distribued as a plugin tiddler
+
+!! Release 4.0.5
+* Dec 30th, 2019
+* [NEW] minor issue fixed on recently added folder
+
+!! Release 4.0.5
+* Dec 30th, 2019
+* [NEW] minor issue fixed on recently added folder
+
+!! Release 4.0.4
+* Dec 29th, 2019
+* [NEW] favorite manager
+* [NEW] favorites manager has got new tabs
+* [NEW] rename and delete folders using manager tab
+* [NEW] export tab for exporting favorites in various format
+* [NEW] delete tiddlers from wiki based on folder selection
+* [NEW] combo search to search in favorite list
+* [NEW] improved documentation
+
+!! Release 4.0.2
+* Dec 23th, 2019
+* [NEW] favorite folder
+* [NEW] rename folder using inline editbox
+* [NEW] drag and drop between folders
+* [NEW] add new favorites to the begining of list
+* [NEW] favorite manager -  initial idea
+* [NEW] drag and drop a tag pill to add all tiddlers to favorites
+
+!! Release 4.0.1
+* Dec 17th, 2019
+* [NEW] a rewrite of old favorite plugin
+
+!! Release 3.1.0
+* Dec 17th, 2019
+* [NEW] distributed as packaged and plugin folder under Node.js
+* [NEW] on mouse hover on items in side bar the title of tiddler is shown. This is useful when tiddler has caption and its title is not shown
+* [NEW] remove button for non-existent favorite items in Favorites list on the sidebar
+
+!! Release 3.0.12
+* Nov 1st, 2018
+* released by Mohammad Rahmani
+* [NEW] favorite icons
+* [NEW] caption for sidebar tab
+* [NEW] minor issue fixed
+!! Release 3.0.5
+* Aug 3rd, 2017
+* released by ''Andrew Harrison''
+* url: http://favorites.tiddlyspot.com/

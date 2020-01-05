@@ -1,0 +1,11 @@
+{
+	"title": "$:/plugins/kookma/favorites",
+	"description": "favorites",
+	"author": "Mohammad Rahmani",
+	"version": "4.1.0",
+	"core-version": ">=5.1.21",
+	"source": "https://github.com/kookma/TW-Favorites",
+	"list": "readme history license",
+	"dependents": "",
+	"plugin-type": "plugin"
+}
