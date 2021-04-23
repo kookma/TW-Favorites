@@ -1,8 +1,9 @@
 caption: Recently added
 created: 20200103090757281
-list: [[Favorites Plugin]] $:/plugins/kookma/favorites/viewtoolbar
-modified: 20200105051155661
+creator: a revised version of Andrew Harrison favorite plugin
+list: $:/plugins/kookma/favorites/styles/image.css
+modified: 20200326195945747
+modifier: a revised version of Andrew Harrison favorite plugin
 tags: $:/tags/Favorites/Folder
 title: $:/plugins/kookma/favorites/recent
 type: text/vnd.tiddlywiki
-

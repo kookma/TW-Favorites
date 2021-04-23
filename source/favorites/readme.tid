@@ -1,28 +1,22 @@
-created: 20181101141032553
-modified: 20200105042522378
+created: 20200326073607952
+modified: 20200326082214810
+tags: 
 title: $:/plugins/kookma/favorites/readme
 type: text/vnd.tiddlywiki
 
-<style> .dsvg svg{width: 1.2em;height: 1.2em;vertical-align: middle;}</style>
+; Favorites
+A favorite item also called a bookmark is a shortcut, you are creating for quick access to it. You can access that bookmark at any time and view that as many times as you want without having to search and find it again.
 
-!! How to use
-The Favorites plugin adds the <span class=dsvg>{{$:/plugins/kookma/favorites/image}}</span> button to the tiddler view Toolbar and also the `Favorites` tab to the sidebar.
+''Favorites plugin'' is a set of tool for creating favorites (bookmarks) in Tiddlywiki. Each favorite item is a shortcut to a tiddler.
 
-The button becomes `red` when selected and then the tiddler appears in the list on the `Favorites` tab.  The list can be sorted using drag and drop of items.
-
-A tiddler can be removed from the `Favorites` tab by either
-
-* opening it and clicking again on the <span class=dsvg>{{$:/plugins/kookma/favorites/image}}</span> button. or
-* click on remove button in `Favorites` list on the sidebar
-
-The ''Favorites plugin'' contains three modes
+The Favorites plugin contains three modes
 
 * ''flat mode'': one favorite list, no folder
 * ''structured mode'': use folder, search tool, export and delete tool
 * ''frozen list'': read only, simple table of content style
 
-Favorites plugin also supports folder operation, export and bulk operations.
+;Code and demo
+For learning plugin features, syntax, tutorial and examples see the plugin demo and code pages
 
-!! Tutorial
-* For detailed description and demo see: [[https://kookma.github.io/TW-Favorites/]]
-* For latest update and code see: [[https://github.com/kookma/TW-Favorites]]
+* Demo: https://kookma.github.io/TW-Favorites/
+* Code: https://github.com/kookma/TW-Favorites

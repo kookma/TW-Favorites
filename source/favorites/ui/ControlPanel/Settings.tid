@@ -1,7 +1,7 @@
 caption: Favorites
 created: 20191229193717073
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20200105050620490
+modified: 20200326191059735
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/favorites/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
@@ -27,7 +27,7 @@ These settings let you customise the behaviour of Utility plugin.
    tiddler="$:/plugins/kookma/favorites/frozen-list" tag="$:/tags/SideBar"
 	 checkactions=<<checked-frozen>>
 	 uncheckactions=<<unchecked-frozen>> > Enable frozen tab</$checkbox>
-:<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/plugins/kookma/favorites/styles/main.css" 
+:<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/plugins/kookma/favorites/styles/image.css" 
 	field="button-color" tag="input" type="color"/>
-:<$checkbox tiddler="$:/plugins/kookma/favorites/styles/main.css" 
+:<$checkbox tiddler="$:/plugins/kookma/favorites/styles/image.css" 
 	 field="button-color" checked="#ff0000" unchecked="#bbb"> Reset viewtoolbar icon color</$checkbox>

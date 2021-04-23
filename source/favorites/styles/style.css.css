@@ -1,9 +1,3 @@
-created: 20191219075310949
-modified: 20191227210901990
-tags: $:/tags/Stylesheet
-title: $:/plugins/kookma/favorites/styles/style.css
-type: text/css
-
 .sd-input textarea:focus, .sd-input input:focus { outline: none;}
 .sd-input textarea, .sd-input input { border:none; border-bottom: 1px dotted gray; margin-left:0px; width:75%;}
 
@@ -29,3 +23,7 @@ type: text/css
   height: 0.8em; !important;
   vertical-align: middle !important;
 }
+
+/* form elements */
+.fv-form label  { display:inline-block; width:130px; margin-left:5px; }
+.fv-form input, .fv-form select { display:inline-block; width:320px;}
