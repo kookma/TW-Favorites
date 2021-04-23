@@ -1,5 +1,5 @@
 created: 20191220123602267
-modified: 20200326190213819
+modified: 20210423152034586
 title: $:/plugins/kookma/favorites/macros/slider
 type: text/vnd.tiddlywiki
 
@@ -16,7 +16,7 @@ type: text/vnd.tiddlywiki
     </$button>
 </$reveal>
 <$list filter="[<fv-config-buttons>match[yes]]" 
-  emptyMessage="""<b><$transclude tiddler=<<__title__>> field="caption"/></b>"""
+  emptyMessage="""<b><$view tiddler=<<__title__>> field="caption"/></b>"""
 	variable=ignore>
   <$macrocall $name="fv-folding-editor" tiddler=<<__title__>> />
 </$list>

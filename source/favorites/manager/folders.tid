@@ -1,6 +1,6 @@
 caption: Folders
 created: 20191226064442751
-modified: 20200326083227048
+modified: 20210423170253500
 tags: $:/favorites/Manager
 title: $:/plugins/kookma/favorites/manager/folders
 type: text/vnd.tiddlywiki
@@ -10,26 +10,34 @@ type: text/vnd.tiddlywiki
 \define newtitle() $(folderpath)$-{{{[tag<foldertagTid>count[]add[1]addprefix[0000]split[]last[3]join[]]}}}
 
 
-\define new-fav-folder()
-<$edit-text tag=input tiddler=<<tempNewTid>> default="" placeholder="enter a folder name"/>
-<$list filter="[<tempNewTid>get[text]!is[blank]]">
+\define add-new-fav-folder-actions()
+<$list filter="[<tempNewTid>get[text]!is[blank]]" variable=null>
 <$vars 
   folderName ={{{ [<tempNewTid>get[text]] }}} 
 	saveTitle={{{[<saveTid>get[text]]}}} >
-<$wikify name=xtitle text=<<newtitle>> >	
-<$button tooltip="create new folder" class="tc-btn-invisible">{{$:/core/images/new-button}}
+<$wikify name=ntitle text=<<newtitle>> >	
 <$action-createtiddler 
-  $basetitle=<<xtitle>>
+  $basetitle=<<ntitle>>
 	$savetitle=<<saveTid>>
 	caption=<<folderName>>
 	tags=<<foldertagTid>> />
 <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="[<saveTid>get[text]]" />
 <!-- clear edit-text temp tiddler-->
 <$action-setfield $tiddler=<<tempNewTid>> text=""/>
-</$button>
 </$wikify>
 </$vars>
 </$list>
+\end
+
+
+\define new-fav-folder()
+<$keyboard key=enter actions=<<add-new-fav-folder-actions>> >
+<$edit-text tag=input tiddler=<<tempNewTid>> default="" placeholder="enter a folder name"/>
+</$keyboard>
+<$button tooltip="create new folder" class="tc-btn-invisible" 
+actions=<<add-new-fav-folder-actions>> disabled= {{{ [<tempNewTid>get[text]!is[blank]then[no]else[yes]] }}}>
+{{$:/core/images/new-button}}
+</$button>
 \end
 
 \define folder-reorder(listTid)
@@ -66,7 +74,7 @@ type: text/vnd.tiddlywiki
 
 \define remove-all-favs()
 <$button class="tc-btn-invisible tc-btn-mini"  popup=<<qualify $(temppopupTid)$>> >
-Remove all favorite items
+''Remove all favorite items''
 </$button>
 <$reveal state=<<qualify $(temppopupTid)$>> type="popup" position="belowleft" animate="yes">
 <div class="tc-block-dropdown-wrapper">
@@ -93,16 +101,17 @@ Remove all <<resultCount>> favorite item(s)?
 
 Create, rename, rearrange and delete folders
 
-!! Rearrange
-<<<
-Rearrange folder:&nbsp;<$macrocall $name="folder-reorder" listTid="$(foldertagTid)$" />
-<<<
 
 !! Create
 <<<
 <div class="fv-form">
 <label>Add new folder:</label><<new-fav-folder>>
 </div>
+<<<
+
+!! Rearrange
+<<<
+Rearrange folder:&nbsp;<$macrocall $name="folder-reorder" listTid="$(foldertagTid)$" />
 <<<
 
 !! Structure

@@ -2,7 +2,7 @@ caption: {{$:/plugins/kookma/favorites/image}}{{$:/language/Buttons/Favorites/Ca
 created: 20181010141620348
 description: {{$:/language/Buttons/Favorites/Hint/Add}}
 list-after: $:/core/ui/Buttons/info
-modified: 20200326193035070
+modified: 20210423152034695
 tags: $:/tags/ViewToolbar
 title: $:/plugins/kookma/favorites/ui/buttons/add-remove
 type: text/vnd.tiddlywiki
