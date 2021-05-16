@@ -1,15 +1,16 @@
 button-color: #ff0000
 created: 20200326140130064
 creator: a revised version of Andrew Harrison favorite plugin
-modified: 20210423152034653
+modified: 20210516035845106
 modifier: a revised version of Andrew Harrison favorite plugin
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/favorites/styles/image.css
 type: text/vnd.tiddlywiki
 
 .tc-tiddler-controls .notselected .tc-image-favorites-button {
- stroke:  #ccc;
- fill:    #ccc;
+/* stroke:  #ccc;
+ fill:    #ccc;*/
+ stroke:#000;
 }
 
 .tc-tiddler-controls .selected .tc-image-favorites-button {
@@ -17,3 +18,7 @@ type: text/vnd.tiddlywiki
  fill:   {{!!button-color}};
 }
 
+.tc-tiddler-controls:hover .selected .tc-image-favorites-button {
+ stroke: {{!!button-color}};
+ fill:   {{!!button-color}};
+}
