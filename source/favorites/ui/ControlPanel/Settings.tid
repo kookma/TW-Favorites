@@ -1,18 +1,21 @@
 caption: Favorites
 created: 20191229193717073
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20210423152034704
+modified: 20220810142610996
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/favorites/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
 
 \define checked-frozen()
-<$action-setfield $tiddler="$:/plugins/kookma/favorites/sidebar-tab" tags=""/>
-<$action-setfield $tiddler="$:/plugins/kookma/favorites/viewtoolbar" tags=""/> 
+<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/sidebar/favorites-list" tags=""/>
+<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/buttons/add-remove" tags=""/> 
+<$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/plugins/kookma/favorites/ui/sidebar/frozen-list"/> 
+
 \end
 \define unchecked-frozen()
-<$action-setfield $tiddler="$:/plugins/kookma/favorites/sidebar-tab" tags="$:/tags/SideBar"/>
-<$action-setfield $tiddler="$:/plugins/kookma/favorites/viewtoolbar" tags="$:/tags/ViewToolbar"/> 
+<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/sidebar/favorites-list" tags="$:/tags/SideBar"/>
+<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/buttons/add-remove" tags="$:/tags/ViewToolbar"/> 
+<$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/plugins/kookma/favorites/ui/sidebar/favorites-list"/> 
 \end
 
 These settings let you customise the behaviour of Utility plugin.
@@ -24,10 +27,10 @@ These settings let you customise the behaviour of Utility plugin.
 
 ;Options
 :<$checkbox checkactions=<<checked-frozen>> 
-   tiddler="$:/plugins/kookma/favorites/frozen-list" tag="$:/tags/SideBar"
+   tiddler="$:/plugins/kookma/favorites/ui/sidebar/frozen-list" tag="$:/tags/SideBar"
 	 checkactions=<<checked-frozen>>
 	 uncheckactions=<<unchecked-frozen>> > Enable frozen tab</$checkbox>
-:<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/plugins/kookma/favorites/styles/image.css" 
+:<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/plugins/kookma/favorites/styles/image" 
 	field="button-color" tag="input" type="color"/>
-:<$checkbox tiddler="$:/plugins/kookma/favorites/styles/image.css" 
+:<$checkbox tiddler="$:/plugins/kookma/favorites/styles/image" 
 	 field="button-color" checked="#ff0000" unchecked="#bbb"> Reset viewtoolbar icon color</$checkbox>

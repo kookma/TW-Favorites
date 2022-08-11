@@ -1,0 +1,39 @@
+code-body: yes
+created: 20220810130900487
+modified: 20220811115909063
+tags: $:/tags/Favorites/Macro/Folder
+title: $:/plugins/kookma/favorites/macros/folder-create
+type: text/vnd.tiddlywiki
+
+\define add-folder-add-actions()
+<$list filter="[<tempNewTid>get[text]trim[]!is[blank]]" variable=null>
+<$vars 
+  folderName = {{{  [<tempNewTid>get[text]] }}} 
+	saveTitle  = {{{[<saveTid>get[text]]}}} >
+<$action-createtiddler 
+  $basetitle={{{[<folderpath>] [tag<foldertagTid>count[]add[1]addprefix[0000]split[]last[3]join[]addprefix[f-]] :and[join[]] }}}
+	$savetitle=<<saveTid>>
+	caption=<<folderName>>
+	tags=<<foldertagTid>> />
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="[<saveTid>get[text]]" />
+<!-- delete temp tiddler to clear inputbox-->
+<$action-deletetiddler $tiddler=<<tempNewTid>>/>
+</$vars>
+</$list>
+\end
+
+\define add-folder-cancel-actions() <$action-deletetiddler $tiddler=<<tempNewTid>>/>
+
+\define new-fav-folder-inputbox()
+<$keyboard key=enter  actions=<<add-folder-add-actions>>    >
+<$keyboard key=escape actions=<<add-folder-cancel-actions>> >
+<$edit-text tag=input tiddler=<<tempNewTid>> default="" placeholder="enter a folder name" class="kk-fav-input"/>
+</$keyboard>
+</$keyboard>
+\end
+\define new-fav-folder-addButton()
+<$button tooltip="create new folder" class="tc-btn-invisible" 
+actions=<<add-folder-add-actions>> disabled= {{{ [<tempNewTid>get[text]!is[blank]then[no]else[yes]] }}}>
+{{$:/core/images/new-button}}
+</$button>
+\end

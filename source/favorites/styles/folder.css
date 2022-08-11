@@ -1,0 +1,80 @@
+.kk-fav-row{
+	display: flex;	
+	width: 100%;
+	flex-wrap: nowrap;
+}
+
+.kk-fav-row div.kk-fav-input-textbox{
+	flex-grow:1;
+	margin-right:8px;
+	width:100%;
+}
+
+.kk-fav-row .kk-fav-input-textbox .kk-fav-input{
+	width:100%;
+	outline: none;
+	border: none;
+	border-bottom: 1px dotted grey;
+	background: transparent;
+}
+
+.kk-fav-row .kk-fav-input-textbox .kk-fav-inpu:focus{
+	outline: none;
+	border-bottom: 1px solid #5778d8;
+	background: transparent;
+}
+
+/* for title everywhere */
+.kk-fav-title{
+		font-weight: 600;
+}
+.kk-fav-title svg{
+	height:1em;
+	width:1em;
+	vertical-align:middle;
+}
+/* folder title row */
+.kk-fav-row .kk-fav-title{
+	width:100%;
+}
+
+
+
+.kk-fav-row input[type="radio"] {
+	width:  0.7em;
+	height: 0.7em; 
+	vertical-align: middle;
+}
+
+/* other items */
+label.kk-fav-label{
+	flex-shrink:0;
+	width:120px;
+
+}
+
+
+/* in slider */
+.kk-fav-folder-content {
+	padding-left:20px;
+}
+
+/* only if caption has svg segment.
+see $:/plugins/kookma/favorites/templates/item-link */
+.kk-fav-item svg{
+	height:1em;
+	width:1em;
+	vertical-align:middle;
+}
+
+
+/* folder reorder and rearrange */
+.kk-fav-folder-reorder{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.kk-fav-folder-reorder button{
+	align-self: flex-start;
+	margin-left:4px;
+}

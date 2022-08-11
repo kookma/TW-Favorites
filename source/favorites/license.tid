@@ -1,13 +1,15 @@
-created: 20200326073607952
-modified: 20210423153248913
+created: 20220810042344787
+modified: 20220810054853047
 tags: 
 title: $:/plugins/kookma/favorites/license
 type: text/vnd.tiddlywiki
 
 Distributed under an MIT license.
 
-Copyright (c) 2018-2021 [[Mohammad Rahmani|https://github.com/kookma]]<br>
-Copyright (c) 2017-2018 [[Andrew Harrison|http://favorites.tiddlyspot.com/]]
+"""
+Copyright (c) 2018-2022 [[Mohammad Rahmani|https://github.com/kookma]]
+Copyright (c) 2017 [[Andrew Harrison|https://github.com/t5a]]
+"""
 
 <<<
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

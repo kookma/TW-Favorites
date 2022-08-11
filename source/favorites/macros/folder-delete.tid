@@ -1,0 +1,17 @@
+code-body: yes
+created: 20220811063311954
+modified: 20220811080027601
+tags: $:/tags/Favorites/Macro/Folder
+title: $:/plugins/kookma/favorites/macros/folder-delete
+type: text/vnd.tiddlywiki
+
+\define folder-delete-actions()
+<$wikify name=warning-message text='Do you wish to delete "{{$(currentTiddler)$!!caption}}" folder ($(currentTiddler)$)?'>
+<$action-confirm $message=<<warning-message>> >
+	<$action-listops $tiddler=<<favlistTid>> $field="list" $subfilter="-[list<currentTiddler>]" />
+	<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="-[[$(currentTiddler)$]]" />
+	<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+	</$action-confirm>"""
+</$wikify>	
+\end	
+<!-- why wikify is used? the confirm message uses browser message and they does not support Wikitext! so we need to wikify everyhting before passing to $message -->

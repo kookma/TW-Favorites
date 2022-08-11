@@ -1,0 +1,22 @@
+caption: Favorites
+created: 20191226064836102
+list-after: $:/core/ui/SideBar/Open
+modified: 20220811194755504
+tags: $:/tags/SideBar
+title: $:/plugins/kookma/favorites/ui/sidebar/favorites-list
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/favorites/macros/definition
+\import [all[tiddlers+shadows]tag[$:/tags/Favorites/Macro/Folder]]
+
+\define show-options()
+<$button class="tc-btn-invisible" to="$:/plugins/kookma/favorites/ui/manager">
+{{$:/core/images/options-button}} Manager
+</$button>
+\end
+
+<!-- create the sidebar tab -->
+<div class="kk-favorites">
+ --- &nbsp; <<show-options>> <br>
+<$transclude tiddler="$:/plugins/kookma/favorites/templates/ui-folder-tree" field=text/>
+</div>

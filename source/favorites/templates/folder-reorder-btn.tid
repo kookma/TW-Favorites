@@ -1,0 +1,8 @@
+code-body: yes
+created: 20220810200850591
+modified: 20220811110212090
+tags: 
+title: $:/plugins/kookma/favorites/templates/folder-reorder-btn
+type: text/vnd.tiddlywiki
+
+<$radio tiddler=<<tempreorderTid>> field=text value=<<currentTiddler>> class="kk-fav-btn-radio"/>

@@ -1,0 +1,31 @@
+code-body: yes
+created: 20220810131400558
+modified: 20220811163625677
+tags: $:/tags/Favorites/Macro/Folder
+title: $:/plugins/kookma/favorites/macros/folder-reorder
+type: text/vnd.tiddlywiki
+
+\define folder-reorder(listTid)
+<$tiddler tiddler={{{ [<tempreorderTid>get[text]] }}} >
+<div class="kk-fav-title"><$transclude field=caption/></div>
+
+<$button tooltip="move down">{{$:/core/images/down-arrow}}
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[move<currentTiddler>]"/>
+</$button>
+<$button tooltip="move up">{{$:/core/images/up-arrow}}
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[move:-1<currentTiddler>]"/>
+</$button>
+<$button tooltip="put first">{{$:/core/images/fold-button}}
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="[<currentTiddler>]+[putfirst[]]"/>
+</$button>
+<$button tooltip="put last">{{$:/core/images/unfold-button}}
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[putlast[]]"/>
+</$button>
+<$button tooltip="sort downwards">{{$:/core/images/unfold-all-button}}
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[sort[caption]]"/>
+</$button>
+<$button tooltip="sort upwards">{{$:/core/images/fold-all-button}}
+<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[!sort[caption]]"/>
+</$button>
+</$tiddler>
+\end

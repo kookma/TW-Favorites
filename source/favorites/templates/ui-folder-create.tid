@@ -1,0 +1,14 @@
+code-body: yes
+created: 20220811085746343
+modified: 20220811151605311
+tags: 
+title: $:/plugins/kookma/favorites/templates/ui-folder-create
+type: text/vnd.tiddlywiki
+
+<div class="kk-fav-row" style="background-color: transparent;">
+<label class="kk-fav-label">Add new folder:</label>
+<div class="kk-fav-input-textbox">
+<<new-fav-folder-inputbox>>
+</div>
+<<new-fav-folder-addButton>>
+</div>

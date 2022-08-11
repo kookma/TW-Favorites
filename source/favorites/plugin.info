@@ -1,10 +1,10 @@
 {
     "title": "$:/plugins/kookma/favorites",
     "name": "Favorites",
-    "description": "create bookmarks, shortcuts and favorite items as flat and structured lists",
+    "description": "Create bookmarks, shortcuts and favorite items as flat and structured lists",
     "author": "Mohammad Rahmani",
-    "version": "4.5.1",
-    "core-version": ">=5.1.23",
+    "version": "4.6.0",
+    "core-version": ">=5.2.3",
     "source": "https://github.com/kookma/TW-Favorites",
     "list": "readme license history",
     "plugin-type": "plugin",

@@ -1,0 +1,19 @@
+code-body: yes
+created: 20191222134036727
+modified: 20220811080320832
+tags: $:/tags/Favorites/Macro/Folder
+title: $:/plugins/kookma/favorites/macros/folder-rename
+type: text/vnd.tiddlywiki
+
+\define rename-perform-actions()
+<$list filter="[<tempFolderTextEdit>get[text]trim[]minlength[1]]" variable=newTitle>
+<$action-setfield $tiddler=<<currentTiddler>> $field="caption" $value=<<newTitle>> />
+<$action-deletetiddler $tiddler=<<tempFolderTextEdit>>/>
+<$action-deletetiddler $tiddler=<<stateFolderEdit>>/>
+</$list>
+\end
+
+\define rename-cancel-actions()
+<$action-deletetiddler $tiddler=<<tempFolderTextEdit>>/>
+<$action-deletetiddler $tiddler=<<stateFolderEdit>>/>
+\end

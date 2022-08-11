@@ -1,0 +1,11 @@
+code-body: yes
+created: 20220811130048871
+modified: 20220811162223927
+tags: 
+title: $:/plugins/kookma/favorites/templates/ui-folder-reorder
+type: text/vnd.tiddlywiki
+
+<div class="kk-fav-row kk-fav-folder-reorder" style="background-color: transparent;">
+<label class="kk-fav-label">Rearrange folder:</label>
+<$macrocall $name="folder-reorder" listTid="$(foldertagTid)$" />
+</div>

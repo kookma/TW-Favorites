@@ -1,10 +1,8 @@
 button-color: #ff0000
 created: 20200326140130064
-creator: a revised version of Andrew Harrison favorite plugin
-modified: 20210516035845106
-modifier: a revised version of Andrew Harrison favorite plugin
+modified: 20220811052009119
 tags: $:/tags/Stylesheet
-title: $:/plugins/kookma/favorites/styles/image.css
+title: $:/plugins/kookma/favorites/styles/image
 type: text/vnd.tiddlywiki
 
 .tc-tiddler-controls .notselected .tc-image-favorites-button {

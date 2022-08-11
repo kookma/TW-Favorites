@@ -1,8 +1,8 @@
-caption: {{$:/plugins/kookma/favorites/image}}{{$:/language/Buttons/Favorites/Caption/Add}}
+caption: {{$:/plugins/kookma/favorites/images/heart}}{{$:/language/Buttons/Favorites/Caption/Add}}
 created: 20181010141620348
 description: {{$:/language/Buttons/Favorites/Hint/Add}}
 list-after: $:/core/ui/Buttons/info
-modified: 20210423152034695
+modified: 20220811194755504
 tags: $:/tags/ViewToolbar
 title: $:/plugins/kookma/favorites/ui/buttons/add-remove
 type: text/vnd.tiddlywiki
@@ -15,7 +15,7 @@ type: text/vnd.tiddlywiki
 
 \define show-favorites-button(class)
 <$list filter='[<tv-config-toolbar-icons>match[yes]]'>
-<span class="$class$">{{$:/plugins/kookma/favorites/image}}</span>
+<span class="$class$">{{$:/plugins/kookma/favorites/images/heart}}</span>
 </$list>
 <$list filter='[<tv-config-toolbar-text>match[yes]]'>
 <span class='tc-btn-text'><$text text={{$:/language/Buttons/Favorites/Caption/Add}}/></span>

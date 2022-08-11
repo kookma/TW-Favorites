@@ -1,0 +1,10 @@
+code-body: yes
+created: 20220810200825873
+modified: 20220811110147066
+tags: 
+title: $:/plugins/kookma/favorites/templates/folder-delete-btn
+type: text/vnd.tiddlywiki
+
+<$button class="tc-btn-invisible" actions=<<folder-delete-actions>> >
+{{$:/core/images/delete-button}}
+</$button>

@@ -1,8 +1,8 @@
 caption: Search
 created: 20191226092612349
-modified: 20210423152034637
-tags: $:/favorites/Manager
-title: $:/plugins/kookma/favorites/manager/search
+modified: 20220811085347072
+tags: $:/tags/Favorites/Manager
+title: $:/plugins/kookma/favorites/manager/tabs/search
 type: text/vnd.tiddlywiki
 
 \import $:/plugins/kookma/favorites/macros/definition

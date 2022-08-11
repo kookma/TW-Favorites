@@ -1,13 +1,12 @@
 caption: Favorites
+code-body: yes
 created: 20191226064633412
-list-before: $:/core/ui/SideBar/Recent
-modified: 20210423152034578
-title: $:/plugins/kookma/favorites/macros/sidebar
+modified: 20220811141605016
+tags: $:/tags/Favorites/Macro/Folder
+title: $:/plugins/kookma/favorites/macros/tree
 type: text/vnd.tiddlywiki
 
 \whitespace trim
-\import $:/plugins/kookma/favorites/macros/slider
-\import $:/plugins/kookma/favorites/macros/definition
 
 \define drop-actions()
 <!-- case 1: tiddler is already in favlist and moved between folders by drag and drop -->
@@ -32,10 +31,8 @@ type: text/vnd.tiddlywiki
 \whitespace trim
 <$droppable actions=<<drop-actions>>>
 <<placeholder>>
-<div>
-<$transclude tiddler="$:/plugins/kookma/favorites/templates/delete-item" field=text/> 
-<$transclude tiddler="$:/plugins/kookma/favorites/templates/show-link" field=text/>
-</div>
+<$transclude tiddler="$:/plugins/kookma/favorites/templates/item-delete-btn" field=text/> 
+<$transclude tiddler="$:/plugins/kookma/favorites/templates/item-link-btn" field=text/>
 </$droppable>
 \end
 
@@ -49,60 +46,33 @@ type: text/vnd.tiddlywiki
 
 
 \define display-folder-is-empty()
-<div style="padding-left:20px;">
 <$droppable actions=<<drop-actions>>>
 <<placeholder>>
 //Folder is empty//
 </$droppable>
-</div>
 \end
 
 \define display-fav-folder(folder)
 <$vars folder=<<__folder__>> >
 <!--check if folder is empty-->
 <$list filter="[list<folder>limit[1]]" emptyMessage=<<display-folder-is-empty>> variable=ignore>
-<div style="padding-left:20px;">
 <$list filter="[list<folder>]"><!--display all tiddlers in folder list field one by one -->
 <$list filter="[<favlistTid>contains<currentTiddler>]" variable=ignore><!--check if the tiddler is a favorite list-->
 <$macrocall $name=droppable-item />
 </$list>
 </$list>
 <<droppable-item-after-last-item>>
-</div>
-</$list>
-</$vars>
-\end
-
-\define display-fav-recentlyAdded()
-<$vars folder=<<recentlyAdded>> >
-<b><$transclude tiddler=<<folder>> field="caption" /></b>
-<!--check if favlistTid is empty -->
-<$list filter="[list<folder>limit[1]]" emptyMessage=<<display-folder-is-empty>> variable=ignore>
-<div style="padding-left:20px;">
-<$list filter="[list<folder>]"><!--get all items in favlistTid-->
-<$list filter="[<favlistTid>contains<currentTiddler>]" variable=ignore><!--check if the tiddler is a favorite list-->
-<$macrocall $name=droppable-item />
-</$list>
-</$list>
-<<droppable-item-after-last-item>>
-</div>
 </$list>
 </$vars>
 \end
 
 
 \define favorites-tree()
-<!--show recently added favorites -->
-<<display-fav-recentlyAdded>>
-
-<!-- show all favorite folders -->
-<$list filter="[subfilter<folders>]-[<recentlyAdded>]"  variable=favfolder >
-<div><!--create a div for each folder-->
+<!-- show all favorite folders including recently added favorites -->
+<$list filter="[subfilter<folders>]"  variable=favfolder >
 <$macrocall $name=favslider
   title=<<favfolder>> 
-  content="""<$macrocall $name="display-fav-folder" folder=<<favfolder>> />""" />
-</div>
+  content="""<$macrocall $name="display-fav-folder" folder=<<favfolder>> />"""
+  status={{{ [<favfolder>match<recentlyAdded>then[yes]else[no]] }}}  />
 </$list>
 \end
-<!-- create the favorite tree -->
-<<favorites-tree>>

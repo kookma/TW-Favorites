@@ -1,0 +1,10 @@
+code-body: yes
+created: 20220811141626840
+modified: 20220811183033209
+tags: 
+title: $:/plugins/kookma/favorites/templates/ui-folder-tree
+type: text/vnd.tiddlywiki
+
+<!-- create the favorite tree -->
+<!-- see: $:/plugins/kookma/favorites/macros/tree -->
+<<favorites-tree>>

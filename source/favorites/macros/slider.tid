@@ -1,27 +1,46 @@
+code-body: yes
 created: 20191220123602267
-modified: 20210423152034586
+modified: 20220811170829186
+tags: $:/tags/Favorites/Macro/Folder
 title: $:/plugins/kookma/favorites/macros/slider
 type: text/vnd.tiddlywiki
 
-\define favslider(title, content)
-<$set name="revealState" filter={{{ [[$:/temp/favorits/]addsuffix<__title__>addsuffix<qualify>] }}}>
-<$reveal type="nomatch" state=<<revealState>> text="yes">
+\whitespace trim
+
+\define favslider(title, content, status:"no")
+<$let revealState={{{ [[$:/temp/favorits/slider/]addsuffix<__title__>] }}} >
+<div  class="kk-fav-row">
+<$reveal type="nomatch" state=<<revealState>> text="yes" default="$status$">
     <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="yes" >
-      {{$:/core/images/right-arrow}}
+		   {{$:/core/images/right-arrow}}
     </$button>
 </$reveal>
-<$reveal type="match" state=<<revealState>> text="yes">
+<$reveal type="match" state=<<revealState>> text="yes" default="$status$" tag="div">
     <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="no" >
-      {{$:/core/images/down-arrow}}
+		   {{$:/core/images/down-arrow}}
     </$button>
 </$reveal>
-<$list filter="[<fv-config-buttons>match[yes]]" 
-  emptyMessage="""<b><$view tiddler=<<__title__>> field="caption"/></b>"""
+<$list filter="[<fv-config-buttons>match[yes]] :filter[<__title__>!match<recentlyAdded>]" 
+  emptyMessage="""<div class="kk-fav-title"> <$transclude tiddler=<<__title__>> field="caption"/></div>"""
 	variable=ignore>
-  <$macrocall $name="fv-folding-editor" tiddler=<<__title__>> />
+  <$macrocall $name="fv-folder-editor" tiddler=<<__title__>> />
 </$list>
-<$reveal type="match" state=<<revealState>> text="yes">
+</div>
+<$reveal type="match" state=<<revealState>> text="yes" default="$status$" tag=div class="kk-fav-folder-content">
 $content$
 </$reveal>
-</$set>
+</$let>
+\end
+
+<!-- This macro is called by favsliderto show the folder title for slider.
+It has buttons to rename folder, delete folder, or reorder it in the folder tree
+-->
+
+\define fv-folder-editor(tiddler)
+<$tiddler tiddler=<<__tiddler__>> >
+<div class="kk-fav-input-textbox"><$transclude   tiddler="$:/plugins/kookma/favorites/templates/folder-title-input"/></div>
+<div><$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-rename-btn"/></div>
+<div><$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-delete-btn"/></div>
+<div><$transclude tiddler="$:/plugins/kookma/favorites/templates/folder-reorder-btn"/></div>
+</$tiddler>
 \end

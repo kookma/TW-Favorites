@@ -1,0 +1,8 @@
+caption: Favorites Folder Manager
+created: 20191224190957179
+modified: 20220811164928533
+tags: 
+title: $:/plugins/kookma/favorites/ui/manager
+type: text/vnd.tiddlywiki
+
+<<tabs tabsList:"[all[tiddlers+shadows]tag[$:/tags/Favorites/Manager]!has[draft.of]!sort[caption]]" default:"$:/plugins/kookma/favorites/manager/tabs/search">>

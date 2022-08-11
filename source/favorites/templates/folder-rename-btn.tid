@@ -1,0 +1,15 @@
+code-body: yes
+created: 20220810200842406
+modified: 20220811123322506
+tags: 
+title: $:/plugins/kookma/favorites/templates/folder-rename-btn
+type: text/vnd.tiddlywiki
+
+<$reveal stateTitle=<<stateFolderEdit>> type="nomatch" text="edit">
+<$button class="tc-btn-invisible" setTitle=<<stateFolderEdit>> setTo="edit">{{$:/core/images/edit-button}}
+<$action-setfield $tiddler=<<tempFolderTextEdit>> $field="text" $value={{{[<currentTiddler>get[caption]]}}}/>
+</$button>
+</$reveal>
+<$reveal stateTitle=<<stateFolderEdit>> type="match" text="edit">
+<$button class="tc-btn-invisible" actions=<<rename-perform-actions>> disabled={{{ [<tempFolderTextEdit>get[text]trim[]minlength[1]then[no]else[yes]] }}}>{{$:/core/images/done-button}}</$button>
+</$reveal>

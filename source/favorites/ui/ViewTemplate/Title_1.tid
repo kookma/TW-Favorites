@@ -1,0 +1,12 @@
+created: 20220811164023166
+creator: Mohammad
+modified: 20220811165440587
+modifier: Mohammad
+tags: 
+title: $:/plugins/kookma/favorites/ui/ViewTemplate/Title
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+<h2 class="tc-title" title={{$:/language/SystemTiddler/Tooltip}}>
+<$text text={{{ [<currentTiddler>get[caption]else{!!title}] }}}/>
+</h2>

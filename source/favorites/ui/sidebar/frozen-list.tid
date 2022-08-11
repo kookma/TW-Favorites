@@ -1,9 +1,9 @@
 caption: Favorites
 created: 20191228192318272
 list-after: $:/core/ui/SideBar/Open
-modified: 20210423152034542
+modified: 20220811194755503
 tags: 
-title: $:/plugins/kookma/favorites/frozen-list
+title: $:/plugins/kookma/favorites/ui/sidebar/frozen-list
 type: text/vnd.tiddlywiki
 
 \import $:/plugins/kookma/favorites/macros/definition
@@ -12,19 +12,13 @@ type: text/vnd.tiddlywiki
 \define contents()
 <div style="padding-left:20px;">
 <$list filter="[list<currentTiddler>]">
-<$transclude tiddler="$:/plugins/kookma/favorites/templates/show-link" field=text/>
+<$transclude tiddler="$:/plugins/kookma/favorites/templates/item-link-btn" field=text/>
 </$list>
 </div>
 \end
 
 
-<$list filter=<<recentlyAdded>> >
-<div><<contents>>
-</div>
-</$list>
-
-
-<$list filter="[subfilter<folders>]-[<recentlyAdded>]" >
+<$list filter="[subfilter<folders>]" >
 <div>
 <$macrocall $name=favslider
 title=<<currentTiddler>>

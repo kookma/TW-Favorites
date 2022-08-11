@@ -1,6 +1,8 @@
+code-body: yes
 created: 20191226172205238
-modified: 20210423152034610
-title: $:/plugins/kookma/favorites/manager/exptab-delete
+modified: 20220811084103138
+tags: $:/tags/Favorites/Manager/FilterButton
+title: $:/plugins/kookma/favorites/manager/filterbuttons/exptab-delete
 type: text/vnd.tiddlywiki
 
 <$reveal type=nomatch default="0" text={{{[list<selection>count[]]}}} ><!--display button if there is a result-->
