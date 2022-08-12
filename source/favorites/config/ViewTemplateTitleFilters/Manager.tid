@@ -1,9 +1,10 @@
 created: 20220811164253609
 creator: Mohammad
-modified: 20220811165445826
+list-before: $:/config/ViewTemplateTitleFilters/system
+modified: 20220812180447137
 modifier: Mohammad
 tags: $:/tags/ViewTemplateTitleFilter
 title: $:/plugins/kookma/favorites/config/ViewTemplateTitleFilters/Manager
 type: text/vnd.tiddlywiki
 
-[all[current]match[$:/plugins/kookma/favorites/ui/manager]then[$:/plugins/kookma/favorites/ui/ViewTemplate/Title]]
+[title[$:/plugins/kookma/favorites/ui/manager]then[$:/plugins/kookma/favorites/ui/ViewTemplate/Title]]

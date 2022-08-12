@@ -1,0 +1,12 @@
+code-body: yes
+created: 20220812132846475
+modified: 20220812141435221
+tags: 
+title: $:/plugins/kookma/favorites/templates/folder-clear-btn
+type: text/vnd.tiddlywiki
+
+<$list filter="[<tempFolderTextEdit>get[text]minlength[1]limit[1]]" variable=null><!-- clear button -->
+<$button tooltip="clear input box" class="tc-btn-invisible kk-fav-btn-mini"
+actions=<<rename-cancel-actions>>
+>{{$:/core/images/close-button}}</$button>
+</$list>

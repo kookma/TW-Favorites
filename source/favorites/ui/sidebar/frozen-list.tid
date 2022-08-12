@@ -1,7 +1,7 @@
 caption: Favorites
 created: 20191228192318272
 list-after: $:/core/ui/SideBar/Open
-modified: 20220811194755503
+modified: 20220812170050297
 tags: 
 title: $:/plugins/kookma/favorites/ui/sidebar/frozen-list
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 \import $:/plugins/kookma/favorites/macros/slider
 
 \define contents()
-<div style="padding-left:20px;">
+<div class="kk-fav-folder-content">
 <$list filter="[list<currentTiddler>]">
 <$transclude tiddler="$:/plugins/kookma/favorites/templates/item-link-btn" field=text/>
 </$list>

@@ -1,7 +1,7 @@
 caption: Favorites
 created: 20191226064836102
 list-after: $:/core/ui/SideBar/Open
-modified: 20220811194755504
+modified: 20220812122449785
 tags: $:/tags/SideBar
 title: $:/plugins/kookma/favorites/ui/sidebar/favorites-list
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 \import [all[tiddlers+shadows]tag[$:/tags/Favorites/Macro/Folder]]
 
 \define show-options()
-<$button class="tc-btn-invisible" to="$:/plugins/kookma/favorites/ui/manager">
+<$button class="tc-btn-invisible kk-fav-btn" to="$:/plugins/kookma/favorites/ui/manager">
 {{$:/core/images/options-button}} Manager
 </$button>
 \end

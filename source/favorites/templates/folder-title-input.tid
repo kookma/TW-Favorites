@@ -1,13 +1,13 @@
 code-body: yes
 created: 20220810205306142
-modified: 20220811154725587
+modified: 20220812131433916
 title: $:/plugins/kookma/favorites/templates/folder-title-input
 type: text/vnd.tiddlywiki
 
-<$reveal stateTitle=<<stateFolderEdit>> type="nomatch" text="edit">
-<div class="kk-fav-title"><$transclude tiddler=<<currentTiddler>> field="caption"/></div>
+<$reveal stateTitle=<<stateFolderEdit>> type="nomatch" text="edit" tag="div" class="kk-fav-title">
+<$transclude tiddler=<<currentTiddler>> field="caption"/>
 </$reveal>
-<$reveal stateTitle=<<stateFolderEdit>> type="match" text="edit">
+<$reveal stateTitle=<<stateFolderEdit>> type="match" text="edit" tag="div">
 <$keyboard key=enter  actions=<<rename-perform-actions>> >
 <$keyboard key=escape actions=<<rename-cancel-actions>>  >
 <$edit-text tiddler=<<tempFolderTextEdit>> field="text" tag="input" default={{{[<currentTiddler>get[caption]]}}} placeholder="enter a folder title" focus=yes class="kk-fav-input"/>

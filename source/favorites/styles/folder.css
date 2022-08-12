@@ -78,3 +78,20 @@ see $:/plugins/kookma/favorites/templates/item-link */
 	align-self: flex-start;
 	margin-left:4px;
 }
+
+/* clear buttons on inputbox for create folder, rename folder*/
+.tc-btn-invisible.kk-fav-btn-mini svg{
+width:0.8em;
+height:0.8em;
+}
+.tc-btn-invisible.kk-fav-btn-mini{
+margin-right:0.5em;
+}
+
+/* Utility classes */
+.kk-fav-bold{
+	font-weight:700;
+}
+.kk-fav-left-gap{
+  margin-left:8px;
+}

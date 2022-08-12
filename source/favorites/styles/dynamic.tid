@@ -1,5 +1,5 @@
 created: 20220811170300171
-modified: 20220811180547508
+modified: 20220812122750673
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/favorites/styles/dynamic
 type: text/vnd.tiddlywiki
@@ -8,18 +8,25 @@ type: text/vnd.tiddlywiki
 .kk-fav-row:hover {
 	background-color: <<colour table-header-background>>;
 }
-
-
-.kk-fav-row .tc-btn-invisible svg {
+.kk-fav-row .tc-btn-invisible svg
+{
 	font-size: 0.9em;
 	fill: <<colour muted-foreground>>;
 	vertical-align: middle;
 	margin-right:0.5em;
 }
-
 .kk-fav-folder-content .tc-btn-invisible.tc-btn-mini svg {
 	font-size: 0.7em;
 	fill: <<colour muted-foreground>>;
 	vertical-align: middle;
 
+}
+
+/* for manager btn */
+.tc-btn-invisible.kk-fav-btn{
+color: <<colour muted-foreground>>;
+}
+.tc-btn-invisible.kk-fav-btn svg{
+	fill:  <<colour muted-foreground>>;
+	vertical-align: middle;
 }

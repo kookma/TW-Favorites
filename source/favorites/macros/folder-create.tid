@@ -1,6 +1,6 @@
 code-body: yes
 created: 20220810130900487
-modified: 20220811115909063
+modified: 20220812132455306
 tags: $:/tags/Favorites/Macro/Folder
 title: $:/plugins/kookma/favorites/macros/folder-create
 type: text/vnd.tiddlywiki
@@ -31,6 +31,15 @@ type: text/vnd.tiddlywiki
 </$keyboard>
 </$keyboard>
 \end
+
+\define new-fav-folder-cancelButton()
+<$list filter="[<tempNewTid>get[text]minlength[1]limit[1]]"><!-- clear button -->
+<$button tooltip="clear input box" class="tc-btn-invisible kk-fav-btn-mini" actions=<<add-folder-cancel-actions>>>
+{{$:/core/images/close-button}}
+</$button>
+</$list>
+\end
+
 \define new-fav-folder-addButton()
 <$button tooltip="create new folder" class="tc-btn-invisible" 
 actions=<<add-folder-add-actions>> disabled= {{{ [<tempNewTid>get[text]!is[blank]then[no]else[yes]] }}}>

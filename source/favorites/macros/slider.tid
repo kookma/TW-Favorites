@@ -1,6 +1,6 @@
 code-body: yes
 created: 20191220123602267
-modified: 20220811170829186
+modified: 20220812135255640
 tags: $:/tags/Favorites/Macro/Folder
 title: $:/plugins/kookma/favorites/macros/slider
 type: text/vnd.tiddlywiki
@@ -37,10 +37,11 @@ It has buttons to rename folder, delete folder, or reorder it in the folder tree
 -->
 
 \define fv-folder-editor(tiddler)
-<$tiddler tiddler=<<__tiddler__>> >
-<div class="kk-fav-input-textbox"><$transclude   tiddler="$:/plugins/kookma/favorites/templates/folder-title-input"/></div>
+<$tiddler tiddler=<<__tiddler__>> > <!-- tiddler is the current folder -->
+<div class="kk-fav-input-textbox"><$transclude tiddler="$:/plugins/kookma/favorites/templates/folder-title-input"/></div>
+<div><$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-clear-btn"/></div>
 <div><$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-rename-btn"/></div>
 <div><$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-delete-btn"/></div>
-<div><$transclude tiddler="$:/plugins/kookma/favorites/templates/folder-reorder-btn"/></div>
+<div><$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-reorder-btn"/></div>
 </$tiddler>
 \end

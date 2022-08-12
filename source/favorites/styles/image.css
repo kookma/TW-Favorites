@@ -1,0 +1,13 @@
+.tc-tiddler-controls .notselected .tc-image-favorites-button {
+	stroke:#000;
+}
+
+.tc-tiddler-controls .selected .tc-image-favorites-button {
+	stroke: {{!!button-color}};
+	fill:   {{!!button-color}};
+}
+
+.tc-tiddler-controls:hover .selected .tc-image-favorites-button {
+	stroke: {{!!button-color}};
+	fill:   {{!!button-color}};
+}

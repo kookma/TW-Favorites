@@ -1,6 +1,6 @@
 caption: Export
 created: 20191226173845382
-modified: 20220811175800541
+modified: 20220812174005452
 tags: $:/tags/Favorites/Manager
 title: $:/plugins/kookma/favorites/manager/tabs/export
 type: text/vnd.tiddlywiki
@@ -20,7 +20,7 @@ Export and delete favorite tiddlers
 </$list>
 <$list filter="[subfilter<folders>count[]!match[0]]">
 <option disabled>&#9472;&#9472;&#9472;&#9472;&#9472;</option>
-<option value="$:/favorites/favlist" style="font-weight:500;">all favorites</option>
+<option value=<<favlistTid>> class="kk-fav-title">All favorite items</option>
 </$list>
 </$select>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/Favorites/Manager/FilterButton]!has[draft.of]]"><$transclude/></$list>

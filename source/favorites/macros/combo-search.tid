@@ -1,6 +1,6 @@
 code-body: yes
 created: 20191219070911471
-modified: 20220811194303967
+modified: 20220812174055612
 tags: 
 title: $:/plugins/kookma/favorites/macros/combo-search
 type: text/vnd.tiddlywiki
@@ -17,11 +17,11 @@ type: text/vnd.tiddlywiki
 <$list filter="[subfilter<folders>]" variable=folder>
 <!-- show folder name if there is a result for it -->
 <$list filter="[list<folder>]  :intersection[enlist<itemsFound>] :and[limit[1]]">
-<div class="kk-fav-title"><$transclude tiddler=<<folder>> field=caption/></div>
+<div class="kk-fav-bold"><$transclude tiddler=<<folder>> field=caption/></div>
 </$list>
 <!-- search and show the result in current folder -->
 <$list filter="[list<folder>]  :intersection[enlist<itemsFound>]">
-<span style="margin-left:8px;"><$link to=<<item>>/></span><br>
+<span class="kk-fav-left-gap"><$link to=<<item>>/></span><br>
 </$list>
 </$list>
 
@@ -32,7 +32,7 @@ type: text/vnd.tiddlywiki
 
 \define combo-search(stateTiddler:"")
 <$vars pattern="^\["
-       stateTid={{{ [[$:/temp/combosearch/]addsuffix[$stateTiddler$]addsuffix<qualify>] }}}>	 
+       stateTid={{{ [[$:/temp/favorites/combosearch/]addsuffix[$stateTiddler$]] }}}>	 
 <!--UI -->
 <div class="tc-search tc-advanced-search">
 <$keyboard key=escape actions='<$action-deletetiddler $tiddler=<<stateTid>>/>' >
