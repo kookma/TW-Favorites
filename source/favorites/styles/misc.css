@@ -1,0 +1,36 @@
+/* select widget in export */
+.kk-fav-select{
+	display:inline-block;
+	width:320px;
+}
+
+/* buttons on folder reorder UI */
+.kk-fav-folder-reorder button{
+	flex-shrink:0;
+}
+
+.kk-fav-folder-reorder button svg.tc-image-button{
+	width:0.7em;
+	height:0.7em;
+}
+
+/* buttons on sidebar top */
+.tc-btn-invisible.kk-fav-btn{
+	vertical-align: middle;
+	opacity:0.5;
+}
+
+.tc-btn-invisible.kk-fav-btn:hover{
+	opacity:1.0;
+}
+
+/* setting color buttons */
+.kk-fv-color-input {
+width:50px;
+height:25px;
+}
+.kk-fav-btn .tc-image-refresh-button{
+vertical-align:middle;
+width:1.5em;
+height:1.5em;
+}

@@ -1,5 +1,5 @@
 created: 20220811170300171
-modified: 20220812122750673
+modified: 20220814143227313
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/favorites/styles/dynamic
 type: text/vnd.tiddlywiki
@@ -24,9 +24,23 @@ type: text/vnd.tiddlywiki
 
 /* for manager btn */
 .tc-btn-invisible.kk-fav-btn{
-color: <<colour muted-foreground>>;
+	color: <<colour muted-foreground>>;
 }
 .tc-btn-invisible.kk-fav-btn svg{
 	fill:  <<colour muted-foreground>>;
-	vertical-align: middle;
+}
+
+/* very important: style the favorite icon on tiddler view toolbar */
+.tc-tiddler-controls .notselected .tc-image-favorites-button {
+	stroke:#000;
+}
+
+.tc-tiddler-controls .selected .tc-image-favorites-button {
+	stroke: {{$:/config/favorites/IconColor}};
+	fill:   {{$:/config/favorites/IconColor}};
+}
+
+.tc-tiddler-controls:hover .selected .tc-image-favorites-button {
+	stroke: {{$:/config/favorites/IconColor}};
+	fill:   {{$:/config/favorites/IconColor}};
 }

@@ -1,6 +1,6 @@
 code-body: yes
 created: 20191219070911471
-modified: 20220812174055612
+modified: 20220814115623770
 tags: 
 title: $:/plugins/kookma/favorites/macros/combo-search
 type: text/vnd.tiddlywiki
@@ -17,7 +17,7 @@ type: text/vnd.tiddlywiki
 <$list filter="[subfilter<folders>]" variable=folder>
 <!-- show folder name if there is a result for it -->
 <$list filter="[list<folder>]  :intersection[enlist<itemsFound>] :and[limit[1]]">
-<div class="kk-fav-bold"><$transclude tiddler=<<folder>> field=caption/></div>
+<div class="kk-fav-title"><$transclude tiddler=<<folder>> field=caption/></div>
 </$list>
 <!-- search and show the result in current folder -->
 <$list filter="[list<folder>]  :intersection[enlist<itemsFound>]">

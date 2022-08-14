@@ -26,7 +26,7 @@
 
 /* for title everywhere */
 .kk-fav-title{
-		font-weight: 600;
+	font-weight: 600;
 }
 .kk-fav-title svg{
 	height:1em;
@@ -81,17 +81,21 @@ see $:/plugins/kookma/favorites/templates/item-link */
 
 /* clear buttons on inputbox for create folder, rename folder*/
 .tc-btn-invisible.kk-fav-btn-mini svg{
-width:0.8em;
-height:0.8em;
+	width:0.8em;
+	height:0.8em;
+	vertical-align:middle;
 }
 .tc-btn-invisible.kk-fav-btn-mini{
-margin-right:0.5em;
+	margin-right:0.5em;
 }
 
 /* Utility classes */
-.kk-fav-bold{
-	font-weight:700;
-}
+
 .kk-fav-left-gap{
-  margin-left:8px;
+	margin-left:8px;
+}
+
+/* hide item-delete for frozen-tab */
+.kk-fav-frozen-tab .kk-fav-close-btn{
+	display:none;
 }

@@ -1,0 +1,51 @@
+code-body: yes
+created: 20220813153344680
+modified: 20220814162207142
+tags: $:/tags/Favorites/Macro/Folder
+title: $:/plugins/kookma/favorites/macros/fav-tree
+type: text/vnd.tiddlywiki
+
+\define fav-tree(status:"closed")
+<div  class="kk-fav-row">
+<!-- part i: show slider buttons -->
+<$reveal type="nomatch" state=<<sliderRevealState>> text="open" default="$status$" tag="div">
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="open" actions=<<modified-actions>>>
+		   {{$:/core/images/right-arrow}}
+    </$button>
+</$reveal>
+<$reveal type="match" state=<<sliderRevealState>> text="open" default="$status$" tag="div">
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="closed" actions=<<modified-actions>>>
+		   {{$:/core/images/down-arrow}}
+    </$button>
+</$reveal>
+<!-- part ii: show folder title (view/edit) and buttons -->
+<$list filter="[<fv-config-buttons>match[yes]] :filter[<currentFolder>!match<recentlyAdded>]" variable=null emptyMessage="""
+<$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-title-view"/>
+""">
+<$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-title-edit"/>
+<$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-clear-btn"/>
+<$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-rename-btn"/>
+<$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-delete-btn"/>
+<$transclude  tiddler="$:/plugins/kookma/favorites/templates/folder-reorder-btn"/>
+</$list>
+</div>
+<!-- part iii: show folder contents (items in each folder) -->
+<$reveal type="match" state=<<sliderRevealState>> text="open" default="$status$" tag=div class="kk-fav-folder-content">
+<$list filter="[list<currentFolder>]" template="$:/plugins/kookma/favorites/templates/list-item" emptyMessage=<<display-folder-is-empty>> />
+<!--create an extra droppable area after last item-->
+<<droppable-item-after-last-item>>
+</$reveal>
+\end
+
+
+<!-- This is a hidden action, if a folder slider button is shift+cliked, then all other folders will collapse
+and the current folder will be expanded
+-->
+
+\define modified-actions()
+<$list filter="[<modifier>match[shift]]">
+<$action-deletetiddler $filter="[prefix[$(temppath)$/slider/]]"/>
+<$action-setfield $tiddler="$:/temp/favorites/slider/$:/favorites/folders/recent" text=closed/>
+<$action-setfield $tiddler=<<sliderRevealState>> text=open/>
+<$list>
+\end

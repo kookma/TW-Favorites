@@ -1,6 +1,6 @@
 code-body: yes
 created: 20220810130900487
-modified: 20220812132455306
+modified: 20220814085417453
 tags: $:/tags/Favorites/Macro/Folder
 title: $:/plugins/kookma/favorites/macros/folder-create
 type: text/vnd.tiddlywiki
@@ -11,7 +11,7 @@ type: text/vnd.tiddlywiki
   folderName = {{{  [<tempNewTid>get[text]] }}} 
 	saveTitle  = {{{[<saveTid>get[text]]}}} >
 <$action-createtiddler 
-  $basetitle={{{[<folderpath>] [tag<foldertagTid>count[]add[1]addprefix[0000]split[]last[3]join[]addprefix[f-]] :and[join[]] }}}
+  $basetitle={{{[<folderpath>] [tag<foldertagTid>count[]addprefix[0000]split[]last[3]join[]addprefix[f-]] :and[join[]] }}}
 	$savetitle=<<saveTid>>
 	caption=<<folderName>>
 	tags=<<foldertagTid>> />

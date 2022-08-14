@@ -1,6 +1,7 @@
 code-body: yes
 created: 20191223204533023
-modified: 20220811183405482
+modified: 20220814091611338
+tags: 
 title: $:/plugins/kookma/favorites/macros/definition
 type: text/vnd.tiddlywiki
 
@@ -18,5 +19,12 @@ type: text/vnd.tiddlywiki
 \define tempreorderTid() $(temppath)$/reorder
 \define saveTid()        $(temppath)$/savetitle
 
-\define stateFolderEdit()    $(temppath)$/folder-editor/$(currentTiddler)$
-\define tempFolderTextEdit() $(temppath)$/folder-editor/edit-text/$(currentTiddler)$
+<!-- slide in fav-tree macro -->
+\define sliderRevealState() $(temppath)$/slider/$(currentFolder)$
+
+<!-- for rename folder -->
+\define stateFolderEdit()    $(temppath)$/folder-editor/$(currentFolder)$
+\define tempFolderTextEdit() $(temppath)$/folder-editor/edit-text/$(currentFolder)$
+
+<!-- config tiddlers-->
+\define openFolderOnDrop() $:/config/favorites/FolderOpenOnDrop

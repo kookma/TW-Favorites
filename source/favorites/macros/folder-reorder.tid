@@ -1,31 +1,33 @@
 code-body: yes
 created: 20220810131400558
-modified: 20220811163625677
+modified: 20220814085442797
 tags: $:/tags/Favorites/Macro/Folder
 title: $:/plugins/kookma/favorites/macros/folder-reorder
 type: text/vnd.tiddlywiki
 
-\define folder-reorder(listTid)
-<$tiddler tiddler={{{ [<tempreorderTid>get[text]] }}} >
-<div class="kk-fav-title"><$transclude field=caption/></div>
+\define folder-reorder()
+<$vars selectedFolder={{{ [<tempreorderTid>get[text]] }}} >
+<div class="kk-fav-title"><$transclude tiddler=<<selectedFolder>> field=caption/></div>
 
 <$button tooltip="move down">{{$:/core/images/down-arrow}}
-<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[move<currentTiddler>]"/>
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[move:1<selectedFolder>]"/>
+<$action-setfield $tiddler=uu $index=foldertagTid   $value=<<foldertagTid>>  />
+<$action-setfield $tiddler=uu $index=selectedFolder $value=<<selectedFolder>>  />
 </$button>
 <$button tooltip="move up">{{$:/core/images/up-arrow}}
-<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[move:-1<currentTiddler>]"/>
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[move:-1<selectedFolder>]"/>
 </$button>
 <$button tooltip="put first">{{$:/core/images/fold-button}}
-<$action-listops $tiddler="$listTid$" $field="list" $subfilter="[<currentTiddler>]+[putfirst[]]"/>
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="-[<selectedFolder>] [<selectedFolder>] +[putfirst:1[]]"/>
 </$button>
 <$button tooltip="put last">{{$:/core/images/unfold-button}}
-<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[putlast[]]"/>
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="-[<selectedFolder>] [<selectedFolder>putlast:1[]]"/>
 </$button>
 <$button tooltip="sort downwards">{{$:/core/images/unfold-all-button}}
-<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[sort[caption]]"/>
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[sort[caption]]"/>
 </$button>
 <$button tooltip="sort upwards">{{$:/core/images/fold-all-button}}
-<$action-listops $tiddler="$listTid$" $field="list" $subfilter="+[!sort[caption]]"/>
+<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[!sort[caption]]"/>
 </$button>
-</$tiddler>
+</$vars>
 \end

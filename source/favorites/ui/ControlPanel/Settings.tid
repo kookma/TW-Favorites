@@ -1,21 +1,21 @@
 caption: Favorites
 created: 20191229193717073
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20220810142610996
+modified: 20220814150518742
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/favorites/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
 
 \define checked-frozen()
-<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/sidebar/favorites-list" tags=""/>
+<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/sidebar/active-tab" tags=""/>
 <$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/buttons/add-remove" tags=""/> 
-<$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/plugins/kookma/favorites/ui/sidebar/frozen-list"/> 
-
+<$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/plugins/kookma/favorites/ui/sidebar/frozen-tab"/> 
 \end
+
 \define unchecked-frozen()
-<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/sidebar/favorites-list" tags="$:/tags/SideBar"/>
+<$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/sidebar/active-tab" tags="$:/tags/SideBar"/>
 <$action-setfield $tiddler="$:/plugins/kookma/favorites/ui/buttons/add-remove" tags="$:/tags/ViewToolbar"/> 
-<$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/plugins/kookma/favorites/ui/sidebar/favorites-list"/> 
+<$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/plugins/kookma/favorites/ui/sidebar/active-tab"/> 
 \end
 
 These settings let you customise the behaviour of Utility plugin.
@@ -26,11 +26,15 @@ These settings let you customise the behaviour of Utility plugin.
 :<$checkbox tiddler="$:/plugins/kookma/favorites/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in more sidebar</$checkbox>
 
 ;Options
+:<$checkbox tiddler="$:/config/favorites/FolderOpenOnDrop" field="text"
+    checked="yes" unchecked="no" default="no"> Open folder on drop</$checkbox>
+:<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/config/favorites/IconColor" 
+	field="text" tag="input" type="color" class="kk-fv-color-input"/>&nbsp;<$button class="tc-btn-invisible kk-fav-btn dd" tooltip="Reset viewtoolbar icon color">{{$:/core/images/refresh-button}}
+    <$action-setfield $tiddler="$:/config/favorites/IconColor" text="#ff0000" />
+  </$button>
+	 
+;Freeze favorites
 :<$checkbox checkactions=<<checked-frozen>> 
-   tiddler="$:/plugins/kookma/favorites/ui/sidebar/frozen-list" tag="$:/tags/SideBar"
+   tiddler="$:/plugins/kookma/favorites/ui/sidebar/frozen-tab" tag="$:/tags/SideBar"
 	 checkactions=<<checked-frozen>>
 	 uncheckactions=<<unchecked-frozen>> > Enable frozen tab</$checkbox>
-:<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/plugins/kookma/favorites/styles/image" 
-	field="button-color" tag="input" type="color"/>
-:<$checkbox tiddler="$:/plugins/kookma/favorites/styles/image" 
-	 field="button-color" checked="#ff0000" unchecked="#bbb"> Reset viewtoolbar icon color</$checkbox>

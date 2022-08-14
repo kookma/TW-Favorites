@@ -1,0 +1,14 @@
+code-body: yes
+created: 20220813160017252
+modified: 20220814114135675
+tags: 
+title: $:/plugins/kookma/favorites/templates/list-item
+type: text/vnd.tiddlywiki
+
+<!-- display a single favorite item (a tiddler in favorites list) -->
+\whitespace trim
+<$droppable actions=<<drop-actions>> enable=<<tv-enable-drag-and-drop>> >
+<<placeholder>>
+<$transclude tiddler="$:/plugins/kookma/favorites/templates/item-delete-btn" field=text/> 
+<$transclude tiddler="$:/plugins/kookma/favorites/templates/item-link-btn"   field=text/>
+</$droppable>

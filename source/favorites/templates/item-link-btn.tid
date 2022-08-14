@@ -1,8 +1,10 @@
+code-body: yes
 created: 20191220074823880
-modified: 20220811110234505
+modified: 20220814085610742
 title: $:/plugins/kookma/favorites/templates/item-link-btn
 type: text/vnd.tiddlywiki
 
+<!----link to item (current tiddler in favorite list)  --->
 <$link to={{!!title}} tooltip=<<currentTiddler>> class="kk-fav-item">
 <$transclude field="caption">
 <$view field="title" />
