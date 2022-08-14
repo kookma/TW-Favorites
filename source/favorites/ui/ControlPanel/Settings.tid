@@ -22,7 +22,7 @@ These settings let you customize the behaviour of the Favorites plugin.
 
 ---
 
-;Show Utility setting in more sidebar
+;Show Favorites setting in more sidebar
 :<$checkbox tiddler="$:/plugins/kookma/favorites/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in more sidebar</$checkbox>
 
 ;Options
