@@ -18,11 +18,11 @@ type: text/vnd.tiddlywiki
 <$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/plugins/kookma/favorites/ui/sidebar/active-tab"/> 
 \end
 
-These settings let you customise the behaviour of Utility plugin.
+These settings let you customize the behaviour of the Favorites plugin.
 
 ---
 
-;Show Utility setting in more sidebar
+;Show Favorites setting in more sidebar
 :<$checkbox tiddler="$:/plugins/kookma/favorites/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in more sidebar</$checkbox>
 
 ;Options
