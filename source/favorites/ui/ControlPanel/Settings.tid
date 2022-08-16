@@ -1,7 +1,7 @@
 caption: Favorites
 created: 20191229193717073
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20220814150518742
+modified: 20220815190354660
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/favorites/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
@@ -27,7 +27,7 @@ These settings let you customize the behaviour of the Favorites plugin.
 
 ;Options
 :<$checkbox tiddler="$:/config/favorites/FolderOpenOnDrop" field="text"
-    checked="yes" unchecked="no" default="no"> Open folder on drop</$checkbox>
+    checked="yes" unchecked="no" default="no"> Open folder on drop item</$checkbox>
 :<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/config/favorites/IconColor" 
 	field="text" tag="input" type="color" class="kk-fv-color-input"/>&nbsp;<$button class="tc-btn-invisible kk-fav-btn dd" tooltip="Reset viewtoolbar icon color">{{$:/core/images/refresh-button}}
     <$action-setfield $tiddler="$:/config/favorites/IconColor" text="#ff0000" />

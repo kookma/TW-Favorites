@@ -28,11 +28,17 @@
 
 /* setting color buttons */
 .kk-fv-color-input {
-width:50px;
-height:25px;
+
 }
 .kk-fav-btn .tc-image-refresh-button{
 vertical-align: middle;
 width:  1.5em;
 height: 1.5em;
+}
+
+input.kk-fv-color-input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 32px;
+	height: 20px;
 }

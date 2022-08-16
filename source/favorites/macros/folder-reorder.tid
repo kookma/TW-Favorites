@@ -1,33 +1,36 @@
 code-body: yes
 created: 20220810131400558
-modified: 20220814085442797
+modified: 20220816155606455
 tags: $:/tags/Favorites/Macro/Folder
 title: $:/plugins/kookma/favorites/macros/folder-reorder
 type: text/vnd.tiddlywiki
 
 \define folder-reorder()
-<$vars selectedFolder={{{ [<tempreorderTid>get[text]] }}} >
-<div class="kk-fav-title"><$transclude tiddler=<<selectedFolder>> field=caption/></div>
+<$let selectedFolder={{{ [<tempreorderTid>get[text]] }}} 
+      disabledStatus={{{[<selectedFolder>tag<foldertagTid>limit[1]then[no]else[yes]]}}} >
+<div class="kk-fav-title">
+<$list filter="[<disabledStatus>match[no]]" variable=null emptyMessage="//First select a folder//">
+<$transclude tiddler=<<selectedFolder>> field=caption/>
+</$list>
+</div>
 
-<$button tooltip="move down">{{$:/core/images/down-arrow}}
+<$button tooltip="move down" disabled=<<disabledStatus>> >{{$:/core/images/down-arrow}}
 <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[move:1<selectedFolder>]"/>
-<$action-setfield $tiddler=uu $index=foldertagTid   $value=<<foldertagTid>>  />
-<$action-setfield $tiddler=uu $index=selectedFolder $value=<<selectedFolder>>  />
 </$button>
-<$button tooltip="move up">{{$:/core/images/up-arrow}}
+<$button tooltip="move up" disabled=<<disabledStatus>> >{{$:/core/images/up-arrow}}
 <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[move:-1<selectedFolder>]"/>
 </$button>
-<$button tooltip="put first">{{$:/core/images/fold-button}}
+<$button tooltip="put first" disabled=<<disabledStatus>> >{{$:/core/images/fold-button}}
 <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="-[<selectedFolder>] [<selectedFolder>] +[putfirst:1[]]"/>
 </$button>
-<$button tooltip="put last">{{$:/core/images/unfold-button}}
+<$button tooltip="put last" disabled=<<disabledStatus>> >{{$:/core/images/unfold-button}}
 <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="-[<selectedFolder>] [<selectedFolder>putlast:1[]]"/>
 </$button>
-<$button tooltip="sort downwards">{{$:/core/images/unfold-all-button}}
+<$button tooltip="sort downwards" disabled=<<disabledStatus>> >{{$:/core/images/unfold-all-button}}
 <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[sort[caption]]"/>
 </$button>
-<$button tooltip="sort upwards">{{$:/core/images/fold-all-button}}
+<$button tooltip="sort upwards" disabled=<<disabledStatus>> >{{$:/core/images/fold-all-button}}
 <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="+[!sort[caption]]"/>
 </$button>
-</$vars>
+</$let>
 \end
