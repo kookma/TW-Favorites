@@ -6,7 +6,6 @@
 
 /* buttons on sidebar: manager, collapse all */
 .tc-btn-invisible.kk-fav-btn{
-	vertical-align: middle;
 	opacity:0.5;
 }
 .tc-btn-invisible.kk-fav-btn:hover{
@@ -14,6 +13,7 @@
 }
 .tc-btn-invisible.kk-fav-btn .tc-image-fold{
 	height:0.9em;
+	vertical-align:bottom;
 }
 
 
