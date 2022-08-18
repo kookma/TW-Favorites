@@ -4,16 +4,6 @@
 	width:320px;
 }
 
-/* buttons on folder reorder UI */
-.kk-fav-folder-reorder button{
-	flex-shrink:0;
-}
-
-.kk-fav-folder-reorder button svg.tc-image-button{
-	width:  0.7em;
-	height: 0.7em;
-}
-
 /* buttons on sidebar: manager, collapse all */
 .tc-btn-invisible.kk-fav-btn{
 	vertical-align: middle;
@@ -26,19 +16,22 @@
 	height:0.9em;
 }
 
-/* setting color buttons */
-.kk-fv-color-input {
 
-}
 .kk-fav-btn .tc-image-refresh-button{
-vertical-align: middle;
-width:  1.5em;
-height: 1.5em;
+	vertical-align: middle;
+	width:  1.1em;
+	height: 1.1em;
 }
 
 input.kk-fv-color-input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
-	width: 32px;
+	width: 40px;
 	height: 20px;
+}
+
+/* Utility classes */
+
+.kk-fav-left-gap{
+	margin-left:8px;
 }

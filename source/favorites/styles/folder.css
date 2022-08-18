@@ -38,8 +38,6 @@
 	width:100%;
 }
 
-
-
 .kk-fav-row input[type="radio"] {
 	width:  0.7em;
 	height: 0.7em; 
@@ -52,7 +50,6 @@ label.kk-fav-label{
 	width:120px;
 
 }
-
 
 /* in slider */
 .kk-fav-folder-content {
@@ -67,18 +64,6 @@ see $:/plugins/kookma/favorites/templates/item-link */
 	vertical-align:middle;
 }
 
-
-/* folder reorder and rearrange */
-.kk-fav-folder-reorder{
-	margin-top:15px;
-	margin-bottom:15px;
-}
-
-.kk-fav-folder-reorder button{
-	align-self: flex-start;
-	margin-left:4px;
-}
-
 /* clear buttons on inputbox for create folder, rename folder*/
 .tc-btn-invisible.kk-fav-btn-mini svg{
 	width:0.8em;
@@ -89,13 +74,24 @@ see $:/plugins/kookma/favorites/templates/item-link */
 	margin-right:0.5em;
 }
 
-/* Utility classes */
-
-.kk-fav-left-gap{
-	margin-left:8px;
+/* folder reorder and rearrange */
+.kk-fav-folder-reorder{
+	margin-top:15px;
+	margin-bottom:15px;
 }
 
-/* hide item-delete for frozen-tab */
+.kk-fav-folder-reorder button{
+	align-self: flex-start;
+	flex-shrink:0;
+	margin-left:4px;
+}
+
+.kk-fav-folder-reorder button svg.tc-image-button{
+	width:  0.7em;
+	height: 0.7em;
+}
+
+/* hide item-delete for frozen-tab ----- this is important and control visibilty of close button*/
 .kk-fav-frozen-tab .kk-fav-close-btn{
 	display:none;
 }
