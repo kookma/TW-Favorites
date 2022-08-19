@@ -1,7 +1,7 @@
 caption: Export
 created: 20191226173845382
 list-after: $:/plugins/kookma/favorites/manager/tabs/search
-modified: 20220814090807588
+modified: 20220819143405104
 tags: $:/tags/Favorites/Manager
 title: $:/plugins/kookma/favorites/manager/tabs/export
 type: text/vnd.tiddlywiki
@@ -9,29 +9,37 @@ type: text/vnd.tiddlywiki
 \import $:/plugins/kookma/favorites/macros/definition
 \define lingo-base() $:/language/Search/
 
-Export and delete favorite tiddlers
+Export or delete favorite tiddlers
 
-<$vars selection={{{ [<selectionTid>get[text]] }}} >
+<$let 
+   selection=    {{{ [<selectionTid>get[text]] }}} 
+   selectionType={{{ [<selection>match[allFavorites]then[allFavorites]else[singleFolder]] }}}
+   allFavoritesFilter="[all[tiddlers+shadows]tag<foldertagTid>get[list]enlist-input[]]"
+   singleFolderFilter="[list<selection>]"
+   selectionFilter={{{ [<selectionType>match[singleFolder]then<singleFolderFilter>else<allFavoritesFilter>] }}}
+   resultCount=    {{{ [subfilter<selectionFilter>count[]] }}} 
+>
 
 <div class="tc-search tc-advanced-search">
-<$select tiddler=<<selectionTid>> class="sltext" field="text" default="message" class="kk-fav-select">
+<$select tiddler=<<selectionTid>> field="text" default="message" class="kk-fav-select">
 <option value="message" disabled selected>Select a folder</option>
 <$list filter=<<folders>> >
 <option value=<<currentTiddler>>><$transclude field=caption/></option>
 </$list>
 <$list filter="[subfilter<folders>count[]!match[0]]">
 <option disabled>&#9472;&#9472;&#9472;&#9472;&#9472;</option>
-<option value=<<favlistTid>> class="kk-fav-title">All favorite items</option>
+<option value="allFavorites" class="kk-fav-title">All favorite items</option>
 </$list>
-</$select>
+</$select><!-- display all filter buttons -->
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/Favorites/Manager/FilterButton]!has[draft.of]]"><$transclude/></$list>
 </div>
 
-<$set name="resultCount" value="""<$count filter="[list<selection>]"/>""">
-<div class="tc-search-results">
-<<lingo Filter/Matches>>
-<$list filter="[list<selection>]" template="$:/core/ui/ListItemTemplate"/>
-</div>
-</$set>
 
-</$vars>
+<div class="tc-search-results">
+<<lingo Filter/Matches>><!-- uses resultCount to show matches-->
+<$reveal type=nomatch default="0" text={{{[subfilter<selectionFilter>count[]]}}} >
+<$list filter=<<selectionFilter>> template="$:/core/ui/ListItemTemplate"/>
+</$reveal>
+</div>
+
+</$let>

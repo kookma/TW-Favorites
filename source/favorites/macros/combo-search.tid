@@ -1,12 +1,12 @@
 code-body: yes
 created: 20191219070911471
-modified: 20220814115623770
+modified: 20220819083302547
 tags: 
 title: $:/plugins/kookma/favorites/macros/combo-search
 type: text/vnd.tiddlywiki
 
-\define standardSearch() [list<favlistTid>search<searchTerms>]
-\define filterSearch()   [list<favlistTid>]+[subfilter<searchTerms>]
+\define standardSearch()  [all[tiddlers+shadows]tag<foldertagTid>get[list]enlist-input[]search<searchTerms>]
+\define filterSearch()    [all[tiddlers+shadows]tag<foldertagTid>get[list]enlist-input[]]+[subfilter<searchTerms>]
 
 \define displayResult(filter)
 <!-- is there any reults at all -->

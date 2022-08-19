@@ -1,0 +1,28 @@
+code-body: yes
+created: 20220819093443480
+list-after: $:/plugins/kookma/favorites/manager/filterbuttons/exptab-export
+modified: 20220819153623877
+tags: $:/tags/Favorites/Manager/FilterButton
+title: $:/plugins/kookma/favorites/manager/filterbuttons/exptab-bundle
+type: text/vnd.tiddlywiki
+
+\define bundle-folder()
+<$button class="tc-btn-invisible" tooltip="export folder as bundle"> {{$:/plugins/kookma/favorites/images/stack}}
+<$action-sendmessage $message="tm-download-file" 
+   $param="$:/plugins/kookma/favorites/templates/export-bundle"
+   exportFilter=<<exportFilter>>
+   folderpath=<<folderpath>>
+   foldertags=<<foldertagTid>>
+   foldercaption= {{{ [<selection>get[caption]addprefix[Exported ]] :else[[Exported favorites]]}}}
+   filename="Favorites_Folder_Exported.json"
+/>
+</$button>
+\end
+
+
+<$reveal type=nomatch default="0" text=<<resultCount>> ><!--display button if there is a result-->
+<$set name=exportFilter filter=<<selectionFilter>> >
+<<bundle-folder>>
+</$set>
+</$reveal>
+

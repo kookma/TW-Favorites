@@ -1,11 +1,11 @@
 code-body: yes
 created: 20191226172205238
-modified: 20220811084103138
+modified: 20220819143432360
 tags: $:/tags/Favorites/Manager/FilterButton
 title: $:/plugins/kookma/favorites/manager/filterbuttons/exptab-delete
 type: text/vnd.tiddlywiki
 
-<$reveal type=nomatch default="0" text={{{[list<selection>count[]]}}} ><!--display button if there is a result-->
+<$reveal type=nomatch default="0" text=<<resultCount>> ><!--display button if there is a result-->
 <$button popup=<<qualify $(temppopupTid)$>> class="tc-btn-invisible" tooltip="delete tiddlers">
 {{$:/core/images/delete-button}}
 </$button>
@@ -15,15 +15,14 @@ type: text/vnd.tiddlywiki
 <div class="tc-block-dropdown-wrapper">
 <div class="tc-block-dropdown tc-edit-type-dropdown">
 <div class="tc-dropdown-item-plain">
-<$set name="resultCount" value="""<$count filter="[list<selection>]"/>""">
 Are you sure you wish to delete permanently <<resultCount>> tiddler(s)?
-</$set>
 </div>
 <div class="tc-dropdown-item-plain">
 <$button class="tc-button tt-button"> delete
-   <$action-deletetiddler $filter="[list<selection>]" />
-	 <$action-listops $tiddler=<<favlistTid>> $field='list' $subfilter="-[list<selection>]"/>
-	 <$action-listops $tiddler=<<selection>> $field='list'  $subfilter="-[list<selection>]"/>
+   <$action-deletetiddler $filter=<<selectionFilter>> />
+   <$list filter="[<selectionType>match[singleFolder]then<selection>] :else[all[tiddlers+shadows]tag<foldertagTid>]" >
+      <$action-deletefield  $field="list"/>
+   </$list>
 </$button>
 </div>
 </div>

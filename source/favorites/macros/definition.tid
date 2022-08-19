@@ -1,12 +1,11 @@
 code-body: yes
 created: 20191223204533023
-modified: 20220814091611338
+modified: 20220819081052991
 tags: 
 title: $:/plugins/kookma/favorites/macros/definition
 type: text/vnd.tiddlywiki
 
-\define folderpath()     $:/favorites/folders/
-\define favlistTid()     $:/favorites/favlist
+\define folderpath()     $:/favorites/folders
 \define foldertagTid()   $:/tags/Favorites/Folder
 \define folders()        [all[tiddlers+shadows]tag[$(foldertagTid)$]]
 \define recentlyAdded()  $:/favorites/folders/recent

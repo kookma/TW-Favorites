@@ -1,13 +1,12 @@
 code-body: yes
 created: 20191226172145394
-modified: 20220811084121321
+modified: 20220819144453855
 tags: $:/tags/Favorites/Manager/FilterButton
 title: $:/plugins/kookma/favorites/manager/filterbuttons/exptab-export
 type: text/vnd.tiddlywiki
 
-\define export-favorites()
-<$reveal type=nomatch default="0" text={{{[list<selection>count[]]}}} ><!--display button if there is a result-->
-<$macrocall $name="exportButton"   exportFilter="[list[$(selection)$]]" lingoBase="$:/language/Buttons/ExportTiddlers/" baseFilename="favorites"/>
+<$reveal type=nomatch default="0" text=<<resultCount>> ><!--display button if there is a result-->
+<$set name=exportFilter filter=<<selectionFilter>> >
+<$macrocall $name="exportButton"  exportFilter=<<exportFilter>> lingoBase="$:/language/Buttons/ExportTiddlers/" baseFilename="favorites"/>
+</$set>
 </$reveal>
-\end
-<<export-favorites>>
