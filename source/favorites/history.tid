@@ -1,12 +1,12 @@
 created: 20220810042344787
-modified: 20220819191707115
+modified: 20220820141231067
 tags: 
 title: $:/plugins/kookma/favorites/history
 type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Favorites/#ChangeLog
 
-* ''4.6.8 '' -- 2022.08.20 -- folder export and import as budle was added. 
+* ''4.6.9 '' -- 2022.08.20 -- folder export and import as budle was added. 
 * ''4.6.5 '' -- 2022.08.14 -- updated to Tiddlywiki 5.2.3 and restructured for performance. 
 * ''4.5.1 '' -- 2020.05.16 -- new svg icon for toolbar and correction for svg color
 * ''4.5.0 '' -- 2020.04.23 -- updated to Tiddlywiki 5.1.23 and fixed few issues
