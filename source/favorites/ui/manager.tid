@@ -5,4 +5,4 @@ tags:
 title: $:/plugins/kookma/favorites/ui/manager
 type: text/vnd.tiddlywiki
 
-<<tabs tabsList:"[all[tiddlers+shadows]tag[$:/tags/Favorites/Manager]!has[draft.of]]" default:"$:/plugins/kookma/favorites/manager/tabs/folders" explicitState="$:/state/favorites/folder-manager">>
+<<tabs tabsList:"[all[tiddlers+shadows]tag[$:/tags/Favorites/Manager]!has[draft.of]]" default:"$:/plugins/kookma/favorites/manager/tabs/folders" explicitState:"$:/state/favorites/folder-manager">>
