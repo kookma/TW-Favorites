@@ -1,0 +1,45 @@
+code-body: yes
+tags: 
+title: $:/plugins/kookma/favorites/vtemplates/ui-folder-tiddler
+type: text/vnd.tiddlywiki
+
+<!--
+This is a viewtemplate, used to render favorites tiddlers in story river 
+It is transcluded by $:/plugins/kookma/favorites/ui/ViewTemplate/Folder
+-->
+
+\import $:/plugins/kookma/favorites/macros/definition
+\import $:/plugins/kookma/favorites/macros/drag-n-drop
+
+\define tempInput()           $:/temp/favorites/add-bulk/$(currentTiddler)$
+\define actionFilterAdd()     [all[current]get[list]enlist-input[]]  [subfilter{$(tempInput)$}]
+\define actionFilterRemove()  [all[current]get[list]enlist-input[]] -[subfilter{$(tempInput)$}]
+\define actionDeleteTemp()    <$action-deletetiddler $tiddler=<<tempInput>> />
+
+\define add-remove-bulk-items()
+<$button tooltip="Append items to this folder" disabled={{{ [subfilter{$(tempInput)$}has[title]limit[1]then[no]else[yes]] }}} actions='<$action-listops $filter=<<actionFilterAdd>>   />' >
+Append
+</$button>  
+<$button tooltip="Remove items from this folder"  disabled={{{ [subfilter{$(tempInput)$}has[title]limit[1]then[no]else[yes]] }}} actions='<$action-listops $filter=<<actionFilterRemove>> />' >
+Remove
+</$button>
+\end
+
+Add, remove bulk of items
+
+<div class="tc-advanced-search">
+<$keyboard key="escape" actions=<<actionDeleteTemp>> >
+<$edit-text tiddler=<<tempInput>> field="text" tag="input" type="search" default="" placeholder="enter a filter like [tag[doc]]"/>
+</$keyboard>
+<<add-remove-bulk-items>>
+</div>
+
+Contents of folder: ''{{!!caption}}''
+
+<div class="kk-fav-folder-content">
+<$vars currentFolder=<<currentTiddler>> >
+<$list filter="[list<currentFolder>]" emptyMessage="//No items found in the current folder//">
+<$transclude tiddler="$:/plugins/kookma/favorites/templates/list-item"/>
+</$list>
+</$vars>
+</div>

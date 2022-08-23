@@ -1,7 +1,5 @@
 caption: Favorites
-created: 20191229193717073
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20220818071433557
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/favorites/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
@@ -40,3 +38,18 @@ These settings let you customize the behaviour of the Favorites plugin.
    tiddler="$:/plugins/kookma/favorites/ui/sidebar/frozen-tab" tag="$:/tags/SideBar"
 	 checkactions=<<checked-frozen>>
 	 uncheckactions=<<unchecked-frozen>> > Enable frozen tab</$checkbox>
+
+;Shortcuts
+: <label class="kk-fav-label">Expand folder</label><$edit-text tiddler="$:/config/favorites/modifierkey/expand-folder" tag=input default="" placeholder="a moifier key like ctrl" class="kk-fav-input"/> + <kbd>click</kbd>
+: <label class="kk-fav-label">Open folder in story river</label><$edit-text tiddler="$:/config/favorites/modifierkey/open-folder" tag=input default="" placeholder="a moifier key like shift" class="kk-fav-input"/> + <kbd>click</kbd>
+
+<style>
+label.kk-fav-label {
+ display:inline-block;
+ width: 180px;
+ margin-bottom:0.4em;
+}
+.kk-fav-input {
+  width:120px;
+}
+</style>

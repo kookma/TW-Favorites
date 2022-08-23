@@ -1,0 +1,10 @@
+list-after: $:/core/ui/ViewTemplate/body
+tags: $:/tags/ViewTemplate
+title: $:/plugins/kookma/favorites/ui/ViewTemplate/Folder
+type: text/vnd.tiddlywiki
+
+<$reveal type="nomatch" stateTitle=<<folded-state>> text="hide" tag="div" retain="yes" animate="yes">
+<$list filter="[all[current]tag[$:/tags/Favorites/Folder]]">
+<$transclude tiddler="$:/plugins/kookma/favorites/vtemplates/ui-folder-tiddler" mode=block/>
+</$list>
+</$reveal>

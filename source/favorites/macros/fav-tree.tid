@@ -1,6 +1,4 @@
 code-body: yes
-created: 20220813153344680
-modified: 20220814162207142
 tags: $:/tags/Favorites/Macro/Folder
 title: $:/plugins/kookma/favorites/macros/fav-tree
 type: text/vnd.tiddlywiki
@@ -38,14 +36,19 @@ type: text/vnd.tiddlywiki
 \end
 
 
-<!-- This is a hidden action, if a folder slider button is shift+cliked, then all other folders will collapse
-and the current folder will be expanded
+<!-- This is a hidden action,
+1. shift+clik on folder slider button causes to expand the current folder and collapse all other folders.
+2. ctrl+clik on folder slider button causes to open thet folder in story river and navigate to that folder.
 -->
 
 \define modified-actions()
-<$list filter="[<modifier>match[shift]]">
+<$list filter="[<modifier>match{$(expandFolderModifierKey)$}]"><!--expand folder, collapse other folders, except Recently added -->
 <$action-deletetiddler $filter="[prefix[$(temppath)$/slider/]]"/>
 <$action-setfield $tiddler="$:/temp/favorites/slider/$:/favorites/folders/recent" text=closed/>
 <$action-setfield $tiddler=<<sliderRevealState>> text=open/>
-<$list>
+</$list>
+<$list filter="[<modifier>match{$(openFolderModifierKey)$}]"><!-- open folder in story river -->
+<$action-navigate $to=<<currentFolder>> $scroll="yes"/>
+<$action-setfield $tiddler=<<sliderRevealState>> text=closed/>
+</$list>
 \end

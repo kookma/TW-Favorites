@@ -1,6 +1,4 @@
 code-body: yes
-created: 20191223204533023
-modified: 20220819081052991
 tags: 
 title: $:/plugins/kookma/favorites/macros/definition
 type: text/vnd.tiddlywiki
@@ -26,4 +24,6 @@ type: text/vnd.tiddlywiki
 \define tempFolderTextEdit() $(temppath)$/folder-editor/edit-text/$(currentFolder)$
 
 <!-- config tiddlers-->
-\define openFolderOnDrop() $:/config/favorites/FolderOpenOnDrop
+\define openFolderOnDrop()        $:/config/favorites/FolderOpenOnDrop
+\define expandFolderModifierKey() $:/config/favorites/modifierkey/expand-folder
+\define openFolderModifierKey()   $:/config/favorites/modifierkey/open-folder
