@@ -38,7 +38,7 @@ Contents of folder: ''{{!!caption}}''
 
 <div class="kk-fav-folder-content">
 <$vars currentFolder=<<currentTiddler>> >
-<$list filter="[list<currentFolder>]" emptyMessage="//No items found in the current folder//">
+<$list filter="[list<currentFolder>]" emptyMessage=<<display-folder-is-empty>> >
 <$transclude tiddler="$:/plugins/kookma/favorites/templates/list-item"/>
 </$list>
 </$vars>

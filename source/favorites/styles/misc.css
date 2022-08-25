@@ -35,3 +35,13 @@ input.kk-fv-color-input[type="color"] {
 .kk-fav-left-gap{
 	margin-left:8px;
 }
+
+/* Settings tab */
+label.kk-fav-label {
+ display:inline-block;
+ width: 180px;
+ margin-bottom:0.4em;
+}
+.kk-fav-input {
+  width:120px;
+}

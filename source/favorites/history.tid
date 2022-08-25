@@ -4,7 +4,7 @@ type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Favorites/#ChangeLog
 
-* ''4.7.0 '' -- 2022.08.24 -- folders are highly improved, export as bundle, special viewtemplate, secret keys. 
+* ''4.7.1 '' -- 2022.08.25 -- folders are highly improved, export as bundle, special viewtemplate, secret keys. 
 * ''4.6.5 '' -- 2022.08.14 -- updated to Tiddlywiki 5.2.3 and restructured for performance. 
 * ''4.5.1 '' -- 2020.05.16 -- new svg icon for toolbar and correction for svg color
 * ''4.5.0 '' -- 2020.04.23 -- updated to Tiddlywiki 5.1.23 and fixed few issues

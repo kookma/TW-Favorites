@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \define colapse-all()
-<$list filter="[prefix[$(temppath)$/slider/]] :filter[{!!text}match[open]] :and[limit[1]]" variable="null">
+<$list filter="[prefix[$(temppath)$/slider/]!suffix<recentlyAdded>] :filter[{!!text}match[open]] :and[limit[1]]" variable="null">
 <$button class="tc-btn-invisible kk-fav-btn" tooltip="collapse all folders, open Recently added" actions='<$action-deletetiddler $filter="[prefix[$(temppath)$/slider/]]"/>' >
 {{$:/core/images/fold-button}}
 </$button>
