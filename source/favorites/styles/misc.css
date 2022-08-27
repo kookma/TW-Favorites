@@ -45,3 +45,9 @@ label.kk-fav-label {
 .kk-fav-input {
   width:120px;
 }
+
+/* folder-tiddler-ui*/
+
+details.kk-fav-details>summary{
+padding-left:0;
+}

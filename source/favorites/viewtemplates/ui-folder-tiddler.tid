@@ -1,6 +1,6 @@
 code-body: yes
 tags: 
-title: $:/plugins/kookma/favorites/vtemplates/ui-folder-tiddler
+title: $:/plugins/kookma/favorites/viewtemplates/ui-folder-tiddler
 type: text/vnd.tiddlywiki
 
 <!--
@@ -12,6 +12,7 @@ It is transcluded by $:/plugins/kookma/favorites/ui/ViewTemplate/Folder
 \import $:/plugins/kookma/favorites/macros/drag-n-drop
 
 \define tempInput()           $:/temp/favorites/add-bulk/$(currentTiddler)$
+\define inputFilter()         [subfilter{$(tempInput)$}] :filter[is[tiddler]]
 \define actionFilterAdd()     [all[current]get[list]enlist-input[]]  [subfilter{$(tempInput)$}]
 \define actionFilterRemove()  [all[current]get[list]enlist-input[]] -[subfilter{$(tempInput)$}]
 \define actionDeleteTemp()    <$action-deletetiddler $tiddler=<<tempInput>> />
@@ -34,6 +35,13 @@ Add, remove bulk of items
 <<add-remove-bulk-items>>
 </div>
 
+<!-- show the result of entered filter before adding/removing-->
+<details class="kk-fav-details"><summary>FIltered items: <small>//<$count filter=<<inputFilter>>/> mathches//</small></summary>
+<div>
+<$list filter=<<inputFilter>> template="$:/core/ui/ListItemTemplate"/>
+</div>
+</details>
+
 Contents of folder: ''{{!!caption}}''
 
 <div class="kk-fav-folder-content">
@@ -41,5 +49,7 @@ Contents of folder: ''{{!!caption}}''
 <$list filter="[list<currentFolder>]" emptyMessage=<<display-folder-is-empty>> >
 <$transclude tiddler="$:/plugins/kookma/favorites/templates/list-item"/>
 </$list>
+<!--create an extra droppable area after last item-->
+<<droppable-item-after-last-item>>
 </$vars>
 </div>
