@@ -6,13 +6,13 @@ type: text/vnd.tiddlywiki
 \define fav-tree(status:"closed")
 <div  class="kk-fav-row">
 <!-- part i: show slider buttons -->
-<$reveal type="nomatch" state=<<sliderRevealState>> text="open" default="$status$" tag="div">
-    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="open" actions=<<modified-actions>>>
+<$reveal type="nomatch" state=<<sliderRevealState>> text="open" default="$status$" tag="div" >
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="open" actions=<<modified-actions>> dragFilter="[list<currentFolder>]">
 		   {{$:/core/images/right-arrow}}
     </$button>
 </$reveal>
-<$reveal type="match" state=<<sliderRevealState>> text="open" default="$status$" tag="div">
-    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="closed" actions=<<modified-actions>>>
+<$reveal type="match" state=<<sliderRevealState>> text="open" default="$status$" tag="div" >
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="closed" actions=<<modified-actions>> dragFilter="[list<currentFolder>]">
 		   {{$:/core/images/down-arrow}}
     </$button>
 </$reveal>
