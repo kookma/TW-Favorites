@@ -7,12 +7,12 @@ type: text/vnd.tiddlywiki
 <div  class="kk-fav-row">
 <!-- part i: show slider buttons -->
 <$reveal type="nomatch" state=<<sliderRevealState>> text="open" default="$status$" tag="div" >
-    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="open" actions=<<modified-actions>> dragFilter="[list<currentFolder>]">
+    <$button class="tc-btn-invisible tc-tiddlylink" actions=<<slider-btn-actions>> dragFilter="[list<currentFolder>]" >
 		   {{$:/core/images/right-arrow}}
     </$button>
 </$reveal>
 <$reveal type="match" state=<<sliderRevealState>> text="open" default="$status$" tag="div" >
-    <$button class="tc-btn-invisible tc-tiddlylink" set=<<sliderRevealState>> setTo="closed" actions=<<modified-actions>> dragFilter="[list<currentFolder>]">
+    <$button class="tc-btn-invisible tc-tiddlylink" actions=<<slider-btn-actions>> dragFilter="[list<currentFolder>]" >
 		   {{$:/core/images/down-arrow}}
     </$button>
 </$reveal>
@@ -41,14 +41,29 @@ type: text/vnd.tiddlywiki
 2. ctrl+clik on folder slider button causes to open thet folder in story river and navigate to that folder.
 -->
 
-\define modified-actions()
-<$list filter="[<modifier>match{$(expandFolderModifierKey)$}]"><!--expand folder, collapse other folders, except Recently added -->
+\define slider-btn-actions()
+<!--expand/collapse this folder, normal or default action, no modifier -->
+<$list filter="[<modifier>match[normal]]">
+<$action-listops $tiddler=<<sliderRevealState>> $field="text" $subfilter="+[toggle[open],[closed]]" />
+</$list>
+
+<!--expand this folder, collapse other folders, except Recently added -->
+<$list filter="[<modifier>match{$(expandFolderModifierKey)$}]">
 <$action-deletetiddler $filter="[prefix[$(temppath)$/slider/]]"/>
 <$action-setfield $tiddler="$:/temp/favorites/slider/$:/favorites/folders/recent" text=closed/>
 <$action-setfield $tiddler=<<sliderRevealState>> text=open/>
 </$list>
-<$list filter="[<modifier>match{$(openFolderModifierKey)$}]"><!-- open folder in story river -->
+
+<!-- open this folder in story river -->
+<$list filter="[<modifier>match{$(openFolderModifierKey)$}]">
 <$action-navigate $to=<<currentFolder>> $scroll="yes"/>
-<$action-setfield $tiddler=<<sliderRevealState>> text=closed/>
+</$list>
+
+<!-- open all items in this folder in story river -->
+<$list filter="[<modifier>match{$(openFolderItemsModifierKey)$}]">
+<$action-setfield $tiddler=<<sliderRevealState>> text=open/>
+<$list filter="[list<currentFolder>reverse[]]" >
+<$action-navigate $to=<<currentTiddler>> />
+</$list>
 </$list>
 \end

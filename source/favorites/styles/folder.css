@@ -24,6 +24,10 @@
 	background: transparent;
 }
 
+.kk-fav-row button.tc-btn-invisible{
+	outline: none;
+}
+
 /* for title everywhere */
 .kk-fav-title{
 	font-weight: 600;
