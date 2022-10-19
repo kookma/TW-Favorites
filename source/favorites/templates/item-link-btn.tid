@@ -4,7 +4,7 @@ type: text/vnd.tiddlywiki
 
 <!----link to item (current tiddler in favorite list)  --->
 <$link to={{!!title}} tooltip=<<currentTiddler>> class="kk-fav-item">
-<$transclude field="caption">
-<$view field="title" />
-</$transclude>
+<$list filter="[<currentTiddler>get[caption]trim[]!is[blank]]" variable=null emptyMessage='<$view field="title"/>'>
+<$transclude field="caption"/>
+</$list>
 </$link><br>

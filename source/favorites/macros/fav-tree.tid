@@ -38,7 +38,8 @@ type: text/vnd.tiddlywiki
 
 <!-- This is a hidden action,
 1. shift+clik on folder slider button causes to expand the current folder and collapse all other folders.
-2. ctrl+clik on folder slider button causes to open thet folder in story river and navigate to that folder.
+2. ctrl+clik  on folder slider button causes to open the current folder in story river and navigate to that folder.
+3. alt+clik   on folder slider button causes to open all the tiddlers (items) in the current folder in story river.
 -->
 
 \define slider-btn-actions()
