@@ -5,7 +5,7 @@ title: $:/plugins/kookma/favorites/manager/filterbuttons/exptab-bundle
 type: text/vnd.tiddlywiki
 
 \define bundle-folder()
-<$button class="tc-btn-invisible" tooltip="export folder as bundle"> {{$:/plugins/kookma/favorites/images/stack}}
+<$button class="tc-btn-invisible" tooltip="export folder and tiddlers as bundle"> {{$:/plugins/kookma/favorites/images/stack}}
 <$action-sendmessage $message="tm-download-file" 
    $param="$:/plugins/kookma/favorites/templates/export-bundle"
    exportFilter=<<exportFilter>>

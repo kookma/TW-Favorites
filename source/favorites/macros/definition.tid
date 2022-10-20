@@ -28,3 +28,4 @@ type: text/vnd.tiddlywiki
 \define expandFolderModifierKey()      $:/config/favorites/modifierkey/expand-folder
 \define openFolderModifierKey()        $:/config/favorites/modifierkey/open-folder
 \define openFolderItemsModifierKey()   $:/config/favorites/modifierkey/open-folder-items
+\define sidebarTabfromFolderModifierKey()  $:/config/favorites/modifierkey/sidebar-tab-from-folder

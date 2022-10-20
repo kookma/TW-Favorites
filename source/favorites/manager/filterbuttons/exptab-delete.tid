@@ -4,7 +4,7 @@ title: $:/plugins/kookma/favorites/manager/filterbuttons/exptab-delete
 type: text/vnd.tiddlywiki
 
 <$reveal type=nomatch default="0" text=<<resultCount>> ><!--display button if there is a result-->
-<$button popup=<<qualify $(temppopupTid)$>> class="tc-btn-invisible" tooltip="delete tiddlers">
+<$button popup=<<qualify $(temppopupTid)$>> class="tc-btn-invisible" tooltip="delete all tiddlers in this folder">
 {{$:/core/images/delete-button}}
 </$button>
 </$reveal>

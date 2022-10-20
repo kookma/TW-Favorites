@@ -67,4 +67,15 @@ type: text/vnd.tiddlywiki
 <$action-navigate $to=<<currentTiddler>> />
 </$list>
 </$list>
+
+<!-- create a sidebar tab from current folder -->
+<$list filter="[<modifier>match{$(sidebarTabfromFolderModifierKey)$}]">
+<$action-createtiddler 
+  $basetitle = {{{ [<currentFolder>get[title]addsuffix[-as-sidebar-tab]] }}}
+  caption    = {{{ [<currentFolder>get[caption]] }}}
+  tags       = "$:/tags/SideBar"
+  text       = "{{$(currentFolder)$||$:/plugins/kookma/favorites/ui/ViewTemplate/Folder}}"
+/>
+</$list>
+
 \end

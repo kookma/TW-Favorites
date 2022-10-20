@@ -4,7 +4,7 @@ type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Favorites/#ChangeLog
 
-* ''4.7.5 '' -- 2022.10.19 -- handling of favorite item with empty/blank caption 
+* ''4.7.6 '' -- 2022.10.20 -- create sidebar tab from folder
 * ''4.7.4 '' -- 2022.10.07 -- folder button modifiers and draggable handle (secret keys) added  
 * ''4.7.1 '' -- 2022.08.25 -- folders are highly improved, export as bundle, special viewtemplate, button modifiers. 
 * ''4.6.5 '' -- 2022.08.14 -- updated to Tiddlywiki 5.2.3 and restructured for performance. 
