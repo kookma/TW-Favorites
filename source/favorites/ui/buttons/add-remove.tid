@@ -1,4 +1,4 @@
-caption: {{$:/plugins/kookma/favorites/images/heart}}{{$:/language/Buttons/Favorites/Caption/Add}}
+caption: {{$:/plugins/kookma/favorites/images/heart}} {{$:/language/Buttons/Favorites/Caption/Add}}
 description: {{$:/language/Buttons/Favorites/Hint/Add}}
 list-after: $:/core/ui/Buttons/info
 tags: $:/tags/ViewToolbar
@@ -11,7 +11,9 @@ type: text/vnd.tiddlywiki
 \define add-this-tiddler() [[$(currentTiddler)$]]+[putfirst[]]
 \define remove-this-tiddler() -[[$(currentTiddler)$]]
 
+
 \define show-favorites-button(class)
+\whitespace trim
 <$list filter='[<tv-config-toolbar-icons>match[yes]]'>
 <span class="$class$">{{$:/plugins/kookma/favorites/images/heart}}</span>
 </$list>
@@ -21,7 +23,7 @@ type: text/vnd.tiddlywiki
 \end
 
 
-\define add-to-favorites-button()
+\define btn-add-to-favorites()
  <$button 
    tooltip={{$:/language/Buttons/Favorites/Hint/Add}} aria-label={{$:/language/Buttons/Favorites/Caption/Add}} 
    class=<<tv-config-toolbar-class>>>
@@ -30,7 +32,7 @@ type: text/vnd.tiddlywiki
  </$button>
 \end 
 
-\define remove-from-favorites-button()
+\define btn-remove-from-favorites()
  <$button 
    tooltip={{$:/language/Buttons/Favorites/Hint/Remove}} aria-label={{$:/language/Buttons/Favorites/Caption/Remove}} 
    class=<<tv-config-toolbar-class>> >
@@ -41,6 +43,6 @@ type: text/vnd.tiddlywiki
 
 <!-- if tiddler is in favorites list, remove it, if tiddler is not in favorites list, add it -->
 <$list filter="[all[current]listed[]tag<foldertagTid>limit[1]]" variable=null 
-       emptyMessage=<<add-to-favorites-button>> >
-<<remove-from-favorites-button>>
+       emptyMessage=<<btn-add-to-favorites>> >
+<<btn-remove-from-favorites>>
 </$list>

@@ -4,6 +4,7 @@ type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Favorites/#ChangeLog
 
+* ''4.7.9 '' -- 2022.11.04 -- bug fixes in slider button and toolbar button
 * ''4.7.6 '' -- 2022.10.20 -- create sidebar tab from folder
 * ''4.7.4 '' -- 2022.10.07 -- folder button modifiers and draggable handle (secret keys) added  
 * ''4.7.1 '' -- 2022.08.25 -- folders are highly improved, export as bundle, special viewtemplate, button modifiers. 
