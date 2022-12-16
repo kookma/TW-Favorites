@@ -23,6 +23,8 @@ These settings let you customize the behaviour of the Favorites plugin.
 :<$checkbox tiddler="$:/plugins/kookma/favorites/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in more sidebar</$checkbox>
 
 ;Options
+:<$checkbox tiddler="$:/config/favorites/NewFolderPosition" field="text"
+    checked="yes" unchecked="no" default="no"> Add new folder at the top of folders list</$checkbox>
 :<$checkbox tiddler="$:/config/favorites/FolderOpenOnDrop" field="text"
     checked="yes" unchecked="no" default="no"> Open folder on drop item</$checkbox>
 :<input type="checkbox" disabled> Viewtoolbar icon color <$edit-text tiddler="$:/config/favorites/IconColor" 
@@ -43,3 +45,6 @@ These settings let you customize the behaviour of the Favorites plugin.
 : <label class="kk-fav-label">Open folder in story river</label><$edit-text tiddler="$:/config/favorites/modifierkey/open-folder" tag=input default="" placeholder="a moifier key like shift" class="kk-fav-input"/> + <kbd>click</kbd>
 : <label class="kk-fav-label">Open folder items in story river</label><$edit-text tiddler="$:/config/favorites/modifierkey/open-folder-items" tag=input default="" placeholder="a moifier key like shift" class="kk-fav-input"/> + <kbd>click</kbd>
 : <label class="kk-fav-label">Create a sidebar tab from folder</label><$edit-text tiddler="$:/config/favorites/modifierkey/sidebar-tab-from-folder" tag=input default="" placeholder="a moifier key like shift" class="kk-fav-input"/> + <kbd>click</kbd>
+
+;Hidden settings
+: [[Global setting for item link title|$:/config/favorites/ItemLinkTitle]]

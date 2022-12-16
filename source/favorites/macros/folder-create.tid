@@ -4,19 +4,25 @@ title: $:/plugins/kookma/favorites/macros/folder-create
 type: text/vnd.tiddlywiki
 
 \define add-folder-add-actions()
+\import $:/plugins/kookma/favorites/macros/definition
+\define add_folder_top_folderlist()    <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="[<saveTid>get[text]] +[putfirst[]]" />
+\define add_folder_bottom_folderlist() <$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="[<saveTid>get[text]]" />
 <$list filter="[<tempNewTid>get[text]trim[]!is[blank]]" variable=null>
-<$vars 
-  folderName = {{{  [<tempNewTid>get[text]] }}} 
-	saveTitle  = {{{[<saveTid>get[text]]}}} >
-<$action-createtiddler 
-  $basetitle=<<unusedtitle baseName:"$(folderpath)$/f" separator:"-" template:"$basename$$separator$$count:3$">>
-	$savetitle=<<saveTid>>
-	caption=<<folderName>>
-	tags=<<foldertagTid>> />
-<$action-listops $tiddler=<<foldertagTid>> $field="list" $subfilter="[<saveTid>get[text]]" />
+<$let 
+  folderName   = {{{  [<tempNewTid>get[text]] }}} 
+  saveTitle    = {{{[<saveTid>get[text]]}}} 
+  setFolderPos = {{{ [<newFolderPosion>get[text]match[yes]then[add_folder_top_folderlist]else[add_folder_bottom_folderlist]]  }}} >
+  <$action-createtiddler 
+    $basetitle=<<unusedtitle baseName:"$(folderpath)$/f" separator:"-" template:"$basename$$separator$$count:3$">>
+	  $savetitle=<<saveTid>>
+	  caption=<<folderName>>
+	  tags=<<foldertagTid>>
+  />
+	<!-- put new folder in right position in foldertagTid-->
+  <$macrocall $name=<<setFolderPos>> />
+</$let>
 <!-- delete temp tiddler to clear inputbox-->
 <$action-deletetiddler $tiddler=<<tempNewTid>>/>
-</$vars>
 </$list>
 \end
 

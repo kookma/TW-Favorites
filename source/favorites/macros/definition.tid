@@ -24,8 +24,10 @@ type: text/vnd.tiddlywiki
 \define tempFolderTextEdit() $(temppath)$/folder-editor/edit-text/$(currentFolder)$
 
 <!-- config tiddlers-->
-\define openFolderOnDrop()             $:/config/favorites/FolderOpenOnDrop
-\define expandFolderModifierKey()      $:/config/favorites/modifierkey/expand-folder
-\define openFolderModifierKey()        $:/config/favorites/modifierkey/open-folder
-\define openFolderItemsModifierKey()   $:/config/favorites/modifierkey/open-folder-items
+\define itemLinkTitleinTree()              $:/config/favorites/ItemLinkTitle
+\define newFolderPosion()                  $:/config/favorites/NewFolderPosition
+\define openFolderOnDrop()                 $:/config/favorites/FolderOpenOnDrop
+\define expandFolderModifierKey()          $:/config/favorites/modifierkey/expand-folder
+\define openFolderModifierKey()            $:/config/favorites/modifierkey/open-folder
+\define openFolderItemsModifierKey()       $:/config/favorites/modifierkey/open-folder-items
 \define sidebarTabfromFolderModifierKey()  $:/config/favorites/modifierkey/sidebar-tab-from-folder

@@ -7,7 +7,11 @@ type: text/vnd.tiddlywiki
 <!-- see also: $:/plugins/kookma/favorites/templates/folder-title-view -->
 <$reveal stateTitle=<<stateFolderEdit>> type="nomatch" text="edit" tag="div" class="kk-fav-title">
 <$droppable actions=<<drop-actions>> enable=<<tv-enable-drag-and-drop>> >
-<$transclude tiddler=<<currentFolder>> field="caption"/>
+<$let tv-wikilinks="no">
+<$transclude tiddler=<<currentFolder>> field="caption">
+<$transclude tiddler=<<currentFolder>> field="title"/>
+</$transclude>
+</$let>
 </$droppable>
 </$reveal>
 <!-- view mode ----->

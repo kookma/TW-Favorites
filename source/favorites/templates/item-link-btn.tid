@@ -3,8 +3,11 @@ title: $:/plugins/kookma/favorites/templates/item-link-btn
 type: text/vnd.tiddlywiki
 
 <!----link to item (current tiddler in favorite list)  --->
-<$link to={{!!title}} tooltip=<<currentTiddler>> class="kk-fav-item">
-<$list filter="[<currentTiddler>get[caption]trim[]!is[blank]]" variable=null emptyMessage='<$view field="title"/>'>
-<$transclude field="caption"/>
-</$list>
+<$link to=<<currentTiddler>> tooltip=<<currentTiddler>> class="kk-fav-item">
+<!--- dispField determines how to show the link title for an item: use specified field in currentFolder, or use global setting -->
+<$let dispField= {{{ [<currentFolder>get[format]]:else[<itemLinkTitleinTree>get[text]] }}} tv-wikilinks="no" >
+  <$transclude field={{{ [<dispField>trim[]!is[blank]!match[title]else[caption]] }}}>
+		  <$view field="title"/> <!-- show title if no field is set, or specified field is empty -->
+  </$transclude>
+</$let>
 </$link><br>

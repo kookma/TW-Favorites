@@ -17,8 +17,19 @@ It is transcluded by $:/plugins/kookma/favorites/ui/ViewTemplate/Folder
 \define actionFilterRemove()  [all[current]get[list]enlist-input[]] -[subfilter{$(tempInput)$}]
 \define actionDeleteTemp()    <$action-deletetiddler $tiddler=<<tempInput>> />
 
+\define actionAppendItems()
+<!-- i. before bulk add of items, remove them from other folders -->
+<$list filter="[subfilter{$(tempInput)$}]" variable=item>
+<$vars oldFolder={{{ [<item>listed[]tag<foldertagTid>] +[limit[1]] }}} >
+<$action-listops $tiddler=<<oldFolder>> $field="list" $subfilter="-[<item>]" />
+</$vars>
+</$list>
+<!-- ii. add items to current folder -->
+<$action-listops $filter=<<actionFilterAdd>>   />
+\end
+
 \define add-remove-bulk-items()
-<$button tooltip="Append items to this folder" disabled={{{ [subfilter{$(tempInput)$}has[title]limit[1]then[no]else[yes]] }}} actions='<$action-listops $filter=<<actionFilterAdd>>   />' >
+<$button tooltip="Append items to this folder" disabled={{{ [subfilter{$(tempInput)$}has[title]limit[1]then[no]else[yes]] }}} actions=<<actionAppendItems>> >
 Append
 </$button>  
 <$button tooltip="Remove items from this folder"  disabled={{{ [subfilter{$(tempInput)$}has[title]limit[1]then[no]else[yes]] }}} actions='<$action-listops $filter=<<actionFilterRemove>> />' >

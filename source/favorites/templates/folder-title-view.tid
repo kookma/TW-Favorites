@@ -6,7 +6,11 @@ type: text/vnd.tiddlywiki
 <!-- view mode ----->
 <div class="kk-fav-title">
 <$droppable actions=<<drop-actions>> enable=<<tv-enable-drag-and-drop>> tag="div">
-<$transclude tiddler=<<currentFolder>> field="caption"/>
+<$let tv-wikilinks="no">
+<$transclude tiddler=<<currentFolder>> field="caption">
+<$transclude tiddler=<<currentFolder>> field="title"/>
+</$transclude>
+</$let>
 </$droppable>
 </div>
 
