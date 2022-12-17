@@ -4,14 +4,15 @@ type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Favorites/#ChangeLog
 
-* ''4.7.9 '' -- 2022.11.04 -- bug fixes in slider button and toolbar button
-* ''4.7.6 '' -- 2022.10.20 -- create sidebar tab from folder
-* ''4.7.4 '' -- 2022.10.07 -- folder button modifiers and draggable handle (secret keys) added  
-* ''4.7.1 '' -- 2022.08.25 -- folders are highly improved, export as bundle, special viewtemplate, button modifiers. 
-* ''4.6.5 '' -- 2022.08.14 -- updated to Tiddlywiki 5.2.3 and restructured for performance. 
-* ''4.5.1 '' -- 2020.05.16 -- new svg icon for toolbar and correction for svg color
-* ''4.5.0 '' -- 2020.04.23 -- updated to Tiddlywiki 5.1.23 and fixed few issues
-* ''4.3.0 '' -- 2019.11.19 -- correct caption when caption filed has wikitext
-* ''4.0.0 '' -- 2019.12.17 -- a rewrite of old favorite plugin
+* ''4.8.1''  -- 2022.12.17 -- update to TW 5.2.4, customizable item link title
+* ''4.7.9''  -- 2022.11.04 -- bug fixes in slider button and toolbar button
+* ''4.7.6''  -- 2022.10.20 -- create sidebar tab from folder
+* ''4.7.4''  -- 2022.10.07 -- folder button modifiers and draggable handle (secret keys) added  
+* ''4.7.1''  -- 2022.08.25 -- folders are highly improved, export as bundle, special viewtemplate, button modifiers. 
+* ''4.6.5''  -- 2022.08.14 -- updated to Tiddlywiki 5.2.3 and restructured for performance. 
+* ''4.5.1''  -- 2020.05.16 -- new svg icon for toolbar and correction for svg color
+* ''4.5.0''  -- 2020.04.23 -- updated to Tiddlywiki 5.1.23 and fixed few issues
+* ''4.3.0''  -- 2019.11.19 -- correct caption when caption filed has wikitext
+* ''4.0.0''  -- 2019.12.17 -- a rewrite of old favorite plugin
 * ''3.0.12'' -- 2018.11.01 -- released by Mohammad Rahmani
-* ''3.0.5 '' -- 2017.08.03 -- released by Andrew Harrison
+* ''3.0.5'' -- 2017.08.03 -- released by Andrew Harrison
