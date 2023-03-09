@@ -5,7 +5,7 @@ type: text/vnd.tiddlywiki
 
 <!-- display a single favorite item (a tiddler in favorites list) -->
 \whitespace trim
-<$droppable actions=<<drop-actions>> enable=<<tv-enable-drag-and-drop>> >
+<$droppable actions=<<drop-actions>> enable=<<tv-enable-drag-and-drop>> tag=div>
 <<placeholder>>
 <$transclude tiddler="$:/plugins/kookma/favorites/templates/item-delete-btn" field=text/> 
 <$transclude tiddler="$:/plugins/kookma/favorites/templates/item-link-btn"   field=text/>

@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
 </$reveal>
 <!-- Whether tiddler is already in favorites list or NOT, move it to the target folder -->
 <$action-listops $tiddler=<<currentFolder>> $subfilter="+[insertbefore:currentTiddler<actionTiddler>]"/>
-<$list filter="[<openFolderOnDrop>get[text]match[yes]]" variavle=null><!-- check config to open folder if a tiddler is dropped on it -->
+<$list filter="[<openFolderOnDrop>get[text]match[yes]]" variable=null><!-- check config to open folder if a tiddler is dropped on it -->
 <$action-setfield $tiddler=<<sliderRevealState>> text="open"/>
 </$list>
 \end
