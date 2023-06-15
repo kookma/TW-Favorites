@@ -7,7 +7,7 @@ type: text/vnd.tiddlywiki
 \import $:/plugins/kookma/favorites/macros/definition
 \define lingo-base() $:/language/Search/
 
-Export or delete favorite tiddlers
+Export or delete folders content
 
 <$let 
    selection=    {{{ [<selectionTid>get[text]] }}} 
