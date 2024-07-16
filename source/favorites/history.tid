@@ -4,6 +4,7 @@ type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Favorites/#ChangeLog
 
+* ''4.8.6''  -- 2024.07.16 -- update to TW 5.3.5, minor fixes
 * ''4.8.1''  -- 2022.12.17 -- update to TW 5.2.4, customizable item link title
 * ''4.7.9''  -- 2022.11.04 -- bug fixes in slider button and toolbar button
 * ''4.7.6''  -- 2022.10.20 -- create sidebar tab from folder
