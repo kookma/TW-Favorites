@@ -11,7 +11,7 @@ The demo can be find here: https://kookma.github.io/TW-Favorites/.
 
 
 # Install
-## Packaged plugin
+## Packaged plugin 
    - Download **favorites.tid** from Packaged folder above.
    - Drag and drop **favorites.tid** into your wiki.
    - Save and reload your wiki.
@@ -19,6 +19,10 @@ The demo can be find here: https://kookma.github.io/TW-Favorites/.
 ## Client-Server installation (separate files)
   - For Node.js (server version) download the favorites folder from source folder and paste in your Tiddlywiki plugins folder.
   - For local installation put the favorites folder into your local plugins folder under your wiki folder.
+  
+## Use the KPL
+  - Use the Kookma plugin library (KPL) for installing on single file TiddlyWiki
+  - The KPL is a small tiddler can be optained from https://kookma.github.io/TW-Favorites/
 
 # Demo
   - Demo: https://kookma.github.io/TW-Favorites/
