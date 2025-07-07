@@ -5,7 +5,7 @@ type: text/vnd.tiddlywiki
 
 \define folderpath()     $:/favorites/folders
 \define foldertagTid()   $:/tags/Favorites/Folder
-\define folders()        [all[tiddlers+shadows]tag[$(foldertagTid)$]]
+\define folders()        [all[tiddlers+shadows]!is[draft]tag[$(foldertagTid)$]]
 \define recentlyAdded()  $:/favorites/folders/recent
 
 \define temppath()       $:/temp/favorites
