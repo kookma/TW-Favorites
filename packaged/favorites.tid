@@ -3,7 +3,7 @@ core-version: >=5.3.5
 description: Create favorites, organize in folders
 list: readme license history
 name: Favorites
-packaged-by: Gatha on 7th July 2025, 21:32:54
+packaged-by: Gatha on 11th August 2025, 12:16:12
 plugin-type: plugin
 source: https://github.com/kookma/TW-Favorites
 stability: STABILITY_2_STABLE
