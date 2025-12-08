@@ -23,7 +23,7 @@ type: text/vnd.tiddlywiki
 
 <!-- create the sidebar tab -->
 <div class=""><!-- for future use -->
-<div>
+<div class="kk-fav-options-bar">
 --- &nbsp;<<show-options>>&nbsp;<<colapse-all>><p/>
 </div>
 <$transclude tiddler="$:/plugins/kookma/favorites/templates/ui-folder-tree" field=text/>

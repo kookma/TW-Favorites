@@ -34,11 +34,13 @@ These settings let you customize the behaviour of the Favorites plugin.
   </$button>
 	</$list>
 	 
-;Freeze favorites
+; Modes
 :<$checkbox checkactions=<<checked-frozen>> 
    tiddler="$:/plugins/kookma/favorites/ui/sidebar/frozen-tab" tag="$:/tags/SideBar"
 	 checkactions=<<checked-frozen>>
 	 uncheckactions=<<unchecked-frozen>> > Enable frozen tab</$checkbox>
+:<$checkbox tiddler="$:/config/favorites/FlatMode" field="text"
+    checked="on" unchecked="off" default="off"> Enable flat mode</$checkbox>
 
 ;Shortcuts
 : <label class="kk-fav-label">Expand folder, collapse other</label><$edit-text tiddler="$:/config/favorites/modifierkey/expand-folder" tag=input default="" placeholder="a moifier key like ctrl" class="kk-fav-input"/> + <kbd>click</kbd>

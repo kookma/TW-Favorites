@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/kookma/favorites",
-    "version": "4.9.0",
+    "version": "4.9.1",
     "stability": "STABILITY_2_STABLE",
     "name": "Favorites",
     "description": "Create favorites, organize in folders",
@@ -12,5 +12,5 @@
     "dependents": "",
     "plugin-type": "plugin",
     "core-version": ">=5.3.5",
-    "packaged-by": "Gatha on 7th July 2025, 18:42:56"
+    "packaged-by": "Gatha on 8th December 2025, 19:44:10"
 }

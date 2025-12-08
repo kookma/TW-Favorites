@@ -1,3 +1,4 @@
+list-after: $:/plugins/kookma/favorites/styles/folder
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/favorites/styles/dynamic
 type: text/vnd.tiddlywiki
@@ -19,7 +20,6 @@ type: text/vnd.tiddlywiki
 	vertical-align: middle;
 
 }
-
 /* for manager btn */
 .tc-btn-invisible.kk-fav-btn{
 	color: <<colour muted-foreground>>;
@@ -27,18 +27,23 @@ type: text/vnd.tiddlywiki
 .tc-btn-invisible.kk-fav-btn svg{
 	fill:  <<colour muted-foreground>>;
 }
-
 /* very important: style the favorite icon on tiddler view toolbar */
 .tc-tiddler-controls .notselected .tc-image-favorites-button {
 	stroke:#000;
 }
-
 .tc-tiddler-controls .selected .tc-image-favorites-button {
 	stroke: {{$:/config/favorites/IconColor}};
 	fill:   {{$:/config/favorites/IconColor}};
 }
-
 .tc-tiddler-controls:hover .selected .tc-image-favorites-button {
 	stroke: {{$:/config/favorites/IconColor}};
 	fill:   {{$:/config/favorites/IconColor}};
 }
+
+/* Styles for flat mode */
+<$list filter="[{$:/config/favorites/FlatMode}match[on]]">
+.kk-fav-options-bar, /* hide the options in $:/plugins/kookma/favorites/ui/sidebar/active-tab */
+.kk-fav-row{ /* hide folders except the recently added, in $:/plugins/kookma/favorites/macros/fav-tree */
+	display: none;
+}
+</$list>
